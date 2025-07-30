@@ -1,0 +1,34 @@
+/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/lightning_utilities/core/imports.py:13: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/anndata/utils.py:434: FutureWarning: Importing read_csv from `anndata` is deprecated. Import anndata.io.read_csv instead.
+  warnings.warn(msg, FutureWarning)
+/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/anndata/utils.py:434: FutureWarning: Importing read_text from `anndata` is deprecated. Import anndata.io.read_text instead.
+  warnings.warn(msg, FutureWarning)
+/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/anndata/utils.py:434: FutureWarning: Importing read_excel from `anndata` is deprecated. Import anndata.io.read_excel instead.
+  warnings.warn(msg, FutureWarning)
+/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/anndata/utils.py:434: FutureWarning: Importing read_mtx from `anndata` is deprecated. Import anndata.io.read_mtx instead.
+  warnings.warn(msg, FutureWarning)
+/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/anndata/utils.py:434: FutureWarning: Importing read_loom from `anndata` is deprecated. Import anndata.io.read_loom instead.
+  warnings.warn(msg, FutureWarning)
+/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/anndata/utils.py:434: FutureWarning: Importing read_hdf from `anndata` is deprecated. Import anndata.io.read_hdf instead.
+  warnings.warn(msg, FutureWarning)
+/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/anndata/utils.py:434: FutureWarning: Importing read_umi_tools from `anndata` is deprecated. Import anndata.io.read_umi_tools instead.
+  warnings.warn(msg, FutureWarning)
+Looking for HEST1K data in: ../../data/HERST_preprocess/3CA_genes/train
+Found 434 samples.
+Looking for HEST1K data in: ../../data/HERST_preprocess/3CA_genes/test
+Found 120 samples.
+Traceback (most recent call last):
+  File "/work/bose_lab/Jamie/Summer/models/THItoGene-Fork/train.py", line 106, in <module>
+    train()
+  File "/work/bose_lab/Jamie/Summer/models/THItoGene-Fork/train.py", line 38, in train
+    trainer = pl.Trainer(accelerator="gpu", devices=[0], max_epochs=epochs,
+  File "/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/pytorch_lightning/utilities/argparse.py", line 69, in insert_env_defaults
+    return fn(self, **kwargs)
+  File "/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py", line 398, in __init__
+    self._accelerator_connector = _AcceleratorConnector(
+  File "/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/pytorch_lightning/trainer/connectors/accelerator_connector.py", line 154, in __init__
+    self._accelerator_flag = self._choose_gpu_accelerator_backend()
+  File "/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/pytorch_lightning/trainer/connectors/accelerator_connector.py", line 366, in _choose_gpu_accelerator_backend
+    raise MisconfigurationException("No supported gpu backend found!")
+lightning_fabric.utilities.exceptions.MisconfigurationException: No supported gpu backend found!

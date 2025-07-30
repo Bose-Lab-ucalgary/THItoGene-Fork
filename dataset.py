@@ -1,6 +1,8 @@
 import glob
 import os
 
+import anndata as ad
+import h5py
 import numpy as np
 import pandas as pd
 import scanpy as sc
@@ -8,6 +10,7 @@ import scprep as scp
 import torch
 import torchvision.transforms as transforms
 from PIL import ImageFile, Image
+from pathlib import Path
 
 from graph_construction import calcADJ
 
@@ -229,6 +232,156 @@ class ViT_HER2ST(torch.utils.data.Dataset):
             gene_set = gene_set & set(i.columns)
         return list(gene_set)
 
+class ViT_HEST1K(torch.utils.data.Dataset):
+    def __init__(self, mode='train', gene_list = '3CA', sr=False, neighs=4):
+        super().__init__()
+        
+        self.hest_path = Path("/work/bose_lab/tahsin/data/HEST")
+        self.patch_path = Path("../../../data/HERST_preprocess/patches_112x112") # Same patch size as her2st?
+        self.processed_path = Path("../../data/HERST_preprocess")
+        self.r = 224//4  # Same as ViT_HER2ST        
+        self.gene_list = gene_list
+        self.mode = mode
+        self.sr = sr
+        self.prune='NA'
+        self.neighs = neighs
+        
+        if gene_list == "HER2ST":
+            self.processed_path = self.processed_path / 'HER2ST'
+        elif gene_list == "3CA":
+            self.processed_path = self.processed_path / '3CA_genes'
+        elif gene_list == "Hallmark":
+            self.processed_path = self.processed_path / 'Hallmark_genes'
+
+        if mode == 'train':
+            self.processed_path = self.processed_path / 'train'
+        elif mode == 'val':
+            self.processed_path = self.processed_path / 'val'
+        else:
+            self.processed_path = self.processed_path / 'test'
+        
+        print(f"Looking for HEST1K data in: {self.processed_path}")
+        
+        # Get sample IDs from available files
+        if self.processed_path.exists():
+            sample_files = list(self.processed_path.glob("*.h5ad"))
+            self.sample_ids = [file.stem.split('_')[0] for file in sample_files]
+            print(f"Found {len(self.sample_ids)} samples.")
+        else:
+            print(f"Warning: Path {self.processed_path} does not exist. Using dummy data.")
+            self.sample_ids = ['dummy_sample']
+        self.id2name = dict(enumerate(self.sample_ids))
+        
+    def __getitem__(self, idx):
+        sample_id = self.sample_ids[idx]
+        adata_path = os.path.join(self.processed_path, f"{sample_id}_preprocessed.h5ad")
+        adata = ad.read_h5ad(adata_path)   
+        print(f"\nProcessing sample {sample_id}")
+        
+        # Make var_names unique before any indexing
+        if not adata.var_names.is_unique:
+            print(f"Found {sum(adata.var_names.duplicated())} duplicate gene names, making them unique")
+            # Method 1: Make unique by appending _1, _2, etc. to duplicates
+            adata.var_names_make_unique()
+    
+        exps = adata.X
+        
+        # Get array coordinates
+        if 'array_row' in adata.obs and 'array_col' in adata.obs:
+            loc = adata.obs[['array_row', 'array_col']].values.astype(int)
+        elif 'spatial' in adata.obsm:
+            loc = adata.obsm['spatial'].copy()
+        else:
+            print(f"Error: Sample {sample_id} does not have spatial coordinates.")
+            loc = np.zeros((adata.n_obs, 2), dtype=int)  
+            for i in range(adata.n_obs):
+                loc[i] = [i // 64, i % 64]   
+                
+        # Normalize positions to [0, 63] range like HER2ST
+        pos_min = loc.min(axis=0)
+        pos_max = loc.max(axis=0)
+        
+        # Normalize to [0, 1] then scale to [0, 63]
+        loc_normalized = (loc - pos_min) / (pos_max - pos_min + 1e-8)
+        loc_scaled = (loc_normalized * 63).astype(int)
+        loc_scaled = np.clip(loc_scaled, 0, 63)  # Ensure within bounds
+        
+        loc = torch.LongTensor(loc_scaled)
+    
+        # Get pixel coordinates
+        if 'spatial' in adata.obsm:
+            centers = adata.obsm['spatial']
+        elif 'spatial' in adata.uns:
+            centers = adata.uns['spatial']
+        else:
+            # print(f"Error: Sample {sample_id} does not have spatial coordinates in obsm['spatial'].")
+            print(adata)
+            raise ValueError(f"Sample {sample_id} does not have spatial coordinates in obsm['spatial'] or uns['spatial'].")
+        # centers = adata.obsm['spatial']
+        
+        # Load Patches
+        patch_path = os.path.join(self.patch_path, f"{sample_id}.h5")
+        if os.path.exists(patch_path):
+            patches = self._load_patches(sample_id, adata.obs_names)
+        else:
+            patches = np.random.randn(len(adata), 3, 112, 112)
+        # Get adjacency matrix 
+        adj_matrix = calcADJ(loc, self.neighs, pruneTag=self.prune)
+            
+        print(f"Patches shape after loading: {patches.shape}")
+        patches = torch.FloatTensor(patches)
+        print(f"Patches shape as tensor: {patches.shape}")
+        
+        exps = torch.Tensor(exps)
+        centers = torch.FloatTensor(centers)
+        loc = torch.LongTensor(loc)
+        adj_matrix = torch.FloatTensor(adj_matrix) if adj_matrix is not None else None
+
+
+        if self.mode == 'train':
+            return patches, loc, exps, adj_matrix
+        else:
+            return patches, loc, exps, centers, adj_matrix
+        
+    def _load_patches(self, sample_id, spot_names):
+        patches = []
+        path = os.path.join(self.patch_path, f"{sample_id}.h5")
+        
+        with h5py.File(path, 'r') as f:
+            images = f['img'][:]
+            barcodes = [bc[0].decode('utf-8') if isinstance(bc[0], bytes) else bc[0] for bc in f['barcode'][:]]
+            
+            barcode_to_idx = {bc: i for i, bc in enumerate(barcodes)}
+            
+            
+            for spot in spot_names:
+                if spot in barcode_to_idx:
+                    idx = barcode_to_idx[spot]
+                    img = images[idx]
+                    # patches.append(images[idx])
+
+                    # Why convert to tensor and normalize??
+                    if len(img.shape) == 2:
+                        img = np.stack([img, img, img], axis =0) # Convert grayscale to RGB
+                    else:
+                        img = img.transpose(2, 0, 1) # Convert HxWxC to CxHxW
+                    patches.append(img)
+                else:
+                    patches.append(np.zeros((3, 112, 112)))
+                    
+        return np.array(patches)
+    
+    def __len__(self):
+        return len(self.sample_ids)
+    
+    def get_gene_names(self):
+        """Get gene names from the first sample"""
+        if len(self.sample_ids) > 0:
+            adata_path = os.path.join(self.processed_path, f"{self.sample_ids[0]}_preprocessed.h5ad")
+            adata = ad.read_h5ad(adata_path)
+            return adata.var_names.tolist()
+        else:
+            return []
 
 class ViT_SKIN(torch.utils.data.Dataset):
 
@@ -580,3 +733,5 @@ class DATA_BRAIN(torch.utils.data.Dataset):
         for i in meta_dict.values():
             gene_set = gene_set & set(i.columns)
         return list(gene_set)
+
+
