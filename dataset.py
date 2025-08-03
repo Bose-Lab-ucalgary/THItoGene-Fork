@@ -2,6 +2,7 @@ import glob
 import os
 
 import anndata as ad
+from anndata.io import read_h5ad as read_h5ad
 import h5py
 import numpy as np
 import pandas as pd
@@ -20,7 +21,7 @@ ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 class ViT_HER2ST(torch.utils.data.Dataset):
 
-    def __init__(self, train=True, gene_list=None, ds=None, sr=False, fold=0):
+    def __init__(self, train=True, gene_list_source=None, ds=None, sr=False, fold=0):
         super(ViT_HER2ST, self).__init__()
         self.cnt_dir = r'./data/her2st/data/ST-cnts'
         self.img_dir = r'./data/her2st/data/ST-imgs'
@@ -29,9 +30,9 @@ class ViT_HER2ST(torch.utils.data.Dataset):
 
         self.r = 224 // 4
 
-        gene_list = list(np.load(r'./data/her_hvg_cut_1000.npy', allow_pickle=True))
+        gene_list_source = list(np.load(r'./data/her_hvg_cut_1000.npy', allow_pickle=True))
 
-        self.gene_list = gene_list
+        self.gene_list_source = gene_list_source
 
         names = os.listdir(self.cnt_dir)
         names.sort()
@@ -79,7 +80,7 @@ class ViT_HER2ST(torch.utils.data.Dataset):
                 else:
                     self.label[i] = torch.full((len(idx),), -1)
 
-        self.gene_set = list(gene_list)
+        self.gene_set = list(gene_list_source)
         self.exp_dict = {i: scp.transform.log(scp.normalize.library_size_normalize(m[self.gene_set].values)) for i, m in
                          self.meta_dict.items()}
         self.center_dict = {i: np.floor(m[['pixel_x', 'pixel_y']].values).astype(int) for i, m in
@@ -94,12 +95,12 @@ class ViT_HER2ST(torch.utils.data.Dataset):
         self.adj_dict = {i: calcADJ(coord=m, k=4, pruneTag='NA') for i, m in self.loc_dict.items()}
 
     def filter_helper(self):
-        a = np.zeros(len(self.gene_list))
+        a = np.zeros(len(self.gene_list_source))
         n = 0
         for i, exp in self.exp_dict.items():
             n += exp.shape[0]
             exp[exp > 0] = 1
-            for j in range((len(self.gene_list))):
+            for j in range((len(self.gene_list_source))):
                 a[j] += np.sum(exp[:, j])
 
     def __getitem__(self, index):
@@ -220,14 +221,14 @@ class ViT_HER2ST(torch.utils.data.Dataset):
         df.set_index('id', inplace=True)
         return df
 
-    def get_meta(self, name, gene_list=None):
+    def get_meta(self, name, gene_list_source=None):
         cnt = self.get_cnt(name)
         pos = self.get_pos(name)
         meta = cnt.join((pos.set_index('id')))
         return meta
 
-    def get_overlap(self, meta_dict, gene_list):
-        gene_set = set(gene_list)
+    def get_overlap(self, meta_dict, gene_list_source):
+        gene_set = set(gene_list_source)
         for i in meta_dict.values():
             gene_set = gene_set & set(i.columns)
         return list(gene_set)
@@ -240,7 +241,7 @@ class ViT_HEST1K(torch.utils.data.Dataset):
         self.patch_path = Path("../../../data/HERST_preprocess/patches_112x112") # Same patch size as her2st?
         self.processed_path = Path("../../data/HERST_preprocess")
         self.r = 224//4  # Same as ViT_HER2ST        
-        self.gene_list = gene_list
+        self.gene_list_source = gene_list
         self.mode = mode
         self.sr = sr
         self.prune='NA'
@@ -248,6 +249,8 @@ class ViT_HEST1K(torch.utils.data.Dataset):
         
         if gene_list == "HER2ST":
             self.processed_path = self.processed_path / 'HER2ST'
+        elif gene_list == "cSCC":
+            self.processed_path = self.processed_path / 'cSCC'
         elif gene_list == "3CA":
             self.processed_path = self.processed_path / '3CA_genes'
         elif gene_list == "Hallmark":
@@ -261,29 +264,34 @@ class ViT_HEST1K(torch.utils.data.Dataset):
             self.processed_path = self.processed_path / 'test'
         
         print(f"Looking for HEST1K data in: {self.processed_path}")
-        
+
         # Get sample IDs from available files
         if self.processed_path.exists():
             sample_files = list(self.processed_path.glob("*.h5ad"))
             self.sample_ids = [file.stem.split('_')[0] for file in sample_files]
             print(f"Found {len(self.sample_ids)} samples.")
         else:
-            print(f"Warning: Path {self.processed_path} does not exist. Using dummy data.")
-            self.sample_ids = ['dummy_sample']
+            print(f"Warning: Path {self.processed_path} does not exist.")
+            raise FileNotFoundError(f"Processed path {self.processed_path} not found.")
+            # self.sample_ids = ['dummy_sample']
         self.id2name = dict(enumerate(self.sample_ids))
         
     def __getitem__(self, idx):
         sample_id = self.sample_ids[idx]
-        adata_path = os.path.join(self.processed_path, f"{sample_id}_preprocessed.h5ad")
-        adata = ad.read_h5ad(adata_path)   
         print(f"\nProcessing sample {sample_id}")
+        adata_path = os.path.join(self.processed_path, f"{sample_id}_preprocessed.h5ad")
+        try:
+            adata = read_h5ad(adata_path)   
+        except Exception as e:
+            print(f"Error reading {adata_path}: {e}")
+            raise Exception(f"Failed to load data for sample {sample_id}. Check if the file exists and is valid.")
         
         # Make var_names unique before any indexing
         if not adata.var_names.is_unique:
             print(f"Found {sum(adata.var_names.duplicated())} duplicate gene names, making them unique")
             # Method 1: Make unique by appending _1, _2, etc. to duplicates
             adata.var_names_make_unique()
-    
+
         exps = adata.X
         
         # Get array coordinates
@@ -328,9 +336,9 @@ class ViT_HEST1K(torch.utils.data.Dataset):
         # Get adjacency matrix 
         adj_matrix = calcADJ(loc, self.neighs, pruneTag=self.prune)
             
-        print(f"Patches shape after loading: {patches.shape}")
+        # print(f"Patches shape after loading: {patches.shape}")
         patches = torch.FloatTensor(patches)
-        print(f"Patches shape as tensor: {patches.shape}")
+        # print(f"Patches shape as tensor: {patches.shape}")
         
         exps = torch.Tensor(exps)
         centers = torch.FloatTensor(centers)
@@ -338,7 +346,7 @@ class ViT_HEST1K(torch.utils.data.Dataset):
         adj_matrix = torch.FloatTensor(adj_matrix) if adj_matrix is not None else None
 
 
-        if self.mode == 'train':
+        if self.mode == 'train' or self.mode == 'val':
             return patches, loc, exps, adj_matrix
         else:
             return patches, loc, exps, centers, adj_matrix
@@ -385,7 +393,7 @@ class ViT_HEST1K(torch.utils.data.Dataset):
 
 class ViT_SKIN(torch.utils.data.Dataset):
 
-    def __init__(self, train=True, gene_list=None, ds=None, sr=False, aug=False, norm=False, fold=0):
+    def __init__(self, train=True, gene_list_source=None, ds=None, sr=False, aug=False, norm=False, fold=0):
         super(ViT_SKIN, self).__init__()
         self.dir = './data/GSE144240_RAW'
         self.r = 224 // 4
@@ -396,10 +404,10 @@ class ViT_SKIN(torch.utils.data.Dataset):
             for j in reps:
                 names.append(i + '_ST_' + j)
 
-        gene_list = list(
+        gene_list_source = list(
             np.load('./data/skin_hvg_cut_1000.npy', allow_pickle=True))
 
-        self.gene_list = gene_list
+        self.gene_list_source = gene_list_source
 
         self.train = train
         self.sr = sr
@@ -424,7 +432,7 @@ class ViT_SKIN(torch.utils.data.Dataset):
         print('Loading metadata...')
         self.meta_dict = {i: self.get_meta(i) for i in names}
 
-        self.gene_set = list(gene_list)
+        self.gene_set = list(gene_list_source)
 
         if self.norm:
             self.exp_dict = {
@@ -446,12 +454,12 @@ class ViT_SKIN(torch.utils.data.Dataset):
         self.adj_dict = {i: calcADJ(coord=m, k=4, pruneTag='NA') for i, m in self.loc_dict.items()}
 
     def filter_helper(self):
-        a = np.zeros(len(self.gene_list))
+        a = np.zeros(len(self.gene_list_source))
         n = 0
         for i, exp in self.exp_dict.items():
             n += exp.shape[0]
             exp[exp > 0] = 1
-            for j in range((len(self.gene_list))):
+            for j in range((len(self.gene_list_source))):
                 a[j] += np.sum(exp[:, j])
 
     def __getitem__(self, index):
@@ -561,14 +569,14 @@ class ViT_SKIN(torch.utils.data.Dataset):
 
         return df
 
-    def get_meta(self, name, gene_list=None):
+    def get_meta(self, name, gene_list_source=None):
         cnt = self.get_cnt(name)
         pos = self.get_pos(name)
         meta = cnt.join(pos.set_index('id'), how='inner')
         return meta
 
-    def get_overlap(self, meta_dict, gene_list):
-        gene_set = set(gene_list)
+    def get_overlap(self, meta_dict, gene_list_source):
+        gene_set = set(gene_list_source)
         for i in meta_dict.values():
             gene_set = gene_set & set(i.columns)
         return list(gene_set)
@@ -576,7 +584,7 @@ class ViT_SKIN(torch.utils.data.Dataset):
 
 class DATA_BRAIN(torch.utils.data.Dataset):
 
-    def __init__(self, train=True, gene_list=None, ds=None, sr=False, aug=False, norm=False, fold=0):
+    def __init__(self, train=True, gene_list_source=None, ds=None, sr=False, aug=False, norm=False, fold=0):
         super(DATA_BRAIN, self).__init__()
         self.dir = './data/10X'
         self.r = 224 // 4
@@ -584,9 +592,9 @@ class DATA_BRAIN(torch.utils.data.Dataset):
         sample_names = ['151507', '151508', '151509', '151510', '151669', '151670', '151671', '151672', '151673',
                         '151674', '151675', '151676']
 
-        gene_list = list(np.load('./data/10X/final_gene.npy'))
+        gene_list_source = list(np.load('./data/10X/final_gene.npy'))
 
-        self.gene_list = gene_list
+        self.gene_list_source = gene_list_source
 
         self.train = train
         self.sr = sr
@@ -611,7 +619,7 @@ class DATA_BRAIN(torch.utils.data.Dataset):
         print('Loading metadata...')
         self.meta_dict = {i: self.get_meta(i) for i in names}
 
-        self.gene_set = list(gene_list)
+        self.gene_set = list(gene_list_source)
 
         if self.norm:
             self.exp_dict = {
@@ -633,12 +641,12 @@ class DATA_BRAIN(torch.utils.data.Dataset):
         self.adj_dict = {i: calcADJ(coord=m, k=4, pruneTag='NA') for i, m in self.loc_dict.items()}
 
     def filter_helper(self):
-        a = np.zeros(len(self.gene_list))
+        a = np.zeros(len(self.gene_list_source))
         n = 0
         for i, exp in self.exp_dict.items():
             n += exp.shape[0]
             exp[exp > 0] = 1
-            for j in range((len(self.gene_list))):
+            for j in range((len(self.gene_list_source))):
                 a[j] += np.sum(exp[:, j])
 
     def __getitem__(self, index):
@@ -724,12 +732,12 @@ class DATA_BRAIN(torch.utils.data.Dataset):
         im = Image.open(path)
         return im
 
-    def get_meta(self, name, gene_list=None):
+    def get_meta(self, name, gene_list_source=None):
         meta = pd.read_csv('./data/10X/151507/10X_Visium_151507_meta.csv', index_col=0)
         return meta
 
-    def get_overlap(self, meta_dict, gene_list):
-        gene_set = set(gene_list)
+    def get_overlap(self, meta_dict, gene_list_source):
+        gene_set = set(gene_list_source)
         for i in meta_dict.values():
             gene_set = gene_set & set(i.columns)
         return list(gene_set)

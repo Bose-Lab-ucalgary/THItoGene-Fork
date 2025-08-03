@@ -1,0 +1,641 @@
+/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/lightning_utilities/core/imports.py:13: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/anndata/utils.py:434: FutureWarning: Importing read_csv from `anndata` is deprecated. Import anndata.io.read_csv instead.
+  warnings.warn(msg, FutureWarning)
+/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/anndata/utils.py:434: FutureWarning: Importing read_text from `anndata` is deprecated. Import anndata.io.read_text instead.
+  warnings.warn(msg, FutureWarning)
+/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/anndata/utils.py:434: FutureWarning: Importing read_excel from `anndata` is deprecated. Import anndata.io.read_excel instead.
+  warnings.warn(msg, FutureWarning)
+/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/anndata/utils.py:434: FutureWarning: Importing read_mtx from `anndata` is deprecated. Import anndata.io.read_mtx instead.
+  warnings.warn(msg, FutureWarning)
+/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/anndata/utils.py:434: FutureWarning: Importing read_loom from `anndata` is deprecated. Import anndata.io.read_loom instead.
+  warnings.warn(msg, FutureWarning)
+/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/anndata/utils.py:434: FutureWarning: Importing read_hdf from `anndata` is deprecated. Import anndata.io.read_hdf instead.
+  warnings.warn(msg, FutureWarning)
+/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/anndata/utils.py:434: FutureWarning: Importing read_umi_tools from `anndata` is deprecated. Import anndata.io.read_umi_tools instead.
+  warnings.warn(msg, FutureWarning)
+[rank: 0] Global seed set to 42
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name       | Type             | Params
+------------------------------------------------
+0 | relu       | ReLU             | 0     
+1 | odconv2d   | ODConv2d         | 3.8 K 
+2 | caps_layer | EfficientCapsNet | 317 K 
+3 | x_embed    | Embedding        | 4.1 K 
+4 | y_embed    | Embedding        | 4.1 K 
+5 | vit        | ViT              | 46.2 M
+6 | gat        | MultiHeadGAT     | 15.7 M
+7 | gene_head  | Sequential       | 1.3 M 
+------------------------------------------------
+63.6 M    Trainable params
+0         Non-trainable params
+63.6 M    Total params
+254.347   Total estimated model params size (MB)
+SLURM auto-requeueing enabled. Setting signal handlers.
+Configuration:
+  Mode: train_test
+  Dataset: HEST1K
+  Gene List: HER2ST
+  GPUs: 1
+  Num Workers: 8
+  Strategy: None
+  Epochs: 5
+  Learning Rate: 1e-05
+  Batch Size: 1
+  Model Directory: model
+
+==================================================
+TRAINING PHASE
+==================================================
+Looking for HEST1K data in: ../../data/HERST_preprocess/HER2ST/train
+Found 427 samples.
+Looking for HEST1K data in: ../../data/HERST_preprocess/HER2ST/val
+Found 123 samples.
+Looking for HEST1K data in: ../../data/HERST_preprocess/HER2ST/test
+Found 61 samples.
+Sanity Checking: 0it [00:00, ?it/s]Sanity Checking:   0%|          | 0/2 [00:00<?, ?it/s]Sanity Checking DataLoader 0:   0%|          | 0/2 [00:00<?, ?it/s]Sanity Checking DataLoader 0:  50%|█████     | 1/2 [00:14<00:14, 14.22s/it]Sanity Checking DataLoader 0: 100%|██████████| 2/2 [00:14<00:00,  7.23s/it]
+Processing sample NCBI628
+
+Processing sample NCBI672
+
+Processing sample SPA59
+
+Processing sample NCBI462
+
+Processing sample SPA81
+
+Processing sample SPA73
+
+Processing sample SPA91
+
+Processing sample TENX126
+
+Processing sample MISC24
+
+Processing sample TENX122
+
+Processing sample INT13
+
+Processing sample NCBI463
+
+Processing sample MEND158
+
+Processing sample TENX31
+
+Processing sample TENX53
+
+Processing sample NCBI829
+
+Processing sample NCBI509
+
+Processing sample TENX117
+                                                                           
+Processing sample SPA114
+
+Processing sample SPA117
+
+Processing sample SPA131
+
+Processing sample NCBI483
+
+Processing sample MISC32
+
+Processing sample ZEN48
+Training: 0it [00:00, ?it/s]Training:   0%|          | 0/427 [00:00<?, ?it/s]Epoch 0:   0%|          | 0/427 [00:00<?, ?it/s] Epoch 0:   0%|          | 1/427 [00:03<23:22,  3.29s/it]Epoch 0:   0%|          | 1/427 [00:03<23:22,  3.29s/it, v_num=4, train_loss=1.450]Epoch 0:   0%|          | 2/427 [00:06<21:51,  3.09s/it, v_num=4, train_loss=1.450]Epoch 0:   0%|          | 2/427 [00:06<21:52,  3.09s/it, v_num=4, train_loss=1.260]Epoch 0:   1%|          | 3/427 [00:06<14:52,  2.11s/it, v_num=4, train_loss=1.260]Epoch 0:   1%|          | 3/427 [00:06<15:01,  2.13s/it, v_num=4, train_loss=1.170]Epoch 0:   1%|          | 4/427 [00:08<14:24,  2.04s/it, v_num=4, train_loss=1.170]Epoch 0:   1%|          | 4/427 [00:08<14:30,  2.06s/it, v_num=4, train_loss=0.874]Epoch 0:   1%|          | 5/427 [00:08<11:40,  1.66s/it, v_num=4, train_loss=0.874]Epoch 0:   1%|          | 5/427 [00:08<11:40,  1.66s/it, v_num=4, train_loss=0.913]Epoch 0:   1%|▏         | 6/427 [00:08<09:48,  1.40s/it, v_num=4, train_loss=0.913]Epoch 0:   1%|▏         | 6/427 [00:08<09:49,  1.40s/it, v_num=4, train_loss=0.771]Epoch 0:   2%|▏         | 7/427 [00:09<09:28,  1.35s/it, v_num=4, train_loss=0.771]Epoch 0:   2%|▏         | 7/427 [00:09<09:45,  1.39s/it, v_num=4, train_loss=0.639]Epoch 0:   2%|▏         | 8/427 [00:10<09:08,  1.31s/it, v_num=4, train_loss=0.639]Epoch 0:   2%|▏         | 8/427 [00:10<09:26,  1.35s/it, v_num=4, train_loss=0.623]Epoch 0:   2%|▏         | 9/427 [00:11<08:32,  1.23s/it, v_num=4, train_loss=0.623]Epoch 0:   2%|▏         | 9/427 [00:11<08:43,  1.25s/it, v_num=4, train_loss=0.689]Epoch 0:   2%|▏         | 10/427 [00:11<07:52,  1.13s/it, v_num=4, train_loss=0.689]Epoch 0:   2%|▏         | 10/427 [00:11<07:52,  1.13s/it, v_num=4, train_loss=0.871]Epoch 0:   3%|▎         | 11/427 [00:11<07:13,  1.04s/it, v_num=4, train_loss=0.871]Epoch 0:   3%|▎         | 11/427 [00:11<07:16,  1.05s/it, v_num=4, train_loss=0.266]Epoch 0:   3%|▎         | 12/427 [00:15<08:42,  1.26s/it, v_num=4, train_loss=0.266]Epoch 0:   3%|▎         | 12/427 [00:15<08:51,  1.28s/it, v_num=4, train_loss=0.704]Epoch 0:   3%|▎         | 13/427 [00:15<08:13,  1.19s/it, v_num=4, train_loss=0.704]Epoch 0:   3%|▎         | 13/427 [00:15<08:15,  1.20s/it, v_num=4, train_loss=0.674]Epoch 0:   3%|▎         | 14/427 [00:15<07:44,  1.12s/it, v_num=4, train_loss=0.674]Epoch 0:   3%|▎         | 14/427 [00:15<07:47,  1.13s/it, v_num=4, train_loss=0.625]Epoch 0:   4%|▎         | 15/427 [00:17<07:59,  1.16s/it, v_num=4, train_loss=0.625]Epoch 0:   4%|▎         | 15/427 [00:17<08:06,  1.18s/it, v_num=4, train_loss=0.741]Epoch 0:   4%|▎         | 16/427 [00:17<07:37,  1.11s/it, v_num=4, train_loss=0.741]Epoch 0:   4%|▎         | 16/427 [00:17<07:37,  1.11s/it, v_num=4, train_loss=0.504]Epoch 0:   4%|▍         | 17/427 [00:18<07:14,  1.06s/it, v_num=4, train_loss=0.504]Epoch 0:   4%|▍         | 17/427 [00:18<07:17,  1.07s/it, v_num=4, train_loss=0.633]Epoch 0:   4%|▍         | 18/427 [00:18<06:58,  1.02s/it, v_num=4, train_loss=0.633]Epoch 0:   4%|▍         | 18/427 [00:18<07:05,  1.04s/it, v_num=4, train_loss=0.563]Epoch 0:   4%|▍         | 19/427 [00:18<06:43,  1.01it/s, v_num=4, train_loss=0.563]Epoch 0:   4%|▍         | 19/427 [00:18<06:43,  1.01it/s, v_num=4, train_loss=0.655]Epoch 0:   5%|▍         | 20/427 [00:18<06:24,  1.06it/s, v_num=4, train_loss=0.655]Epoch 0:   5%|▍         | 20/427 [00:18<06:24,  1.06it/s, v_num=4, train_loss=0.741]Epoch 0:   5%|▍         | 21/427 [00:19<06:07,  1.10it/s, v_num=4, train_loss=0.741]Epoch 0:   5%|▍         | 21/427 [00:19<06:08,  1.10it/s, v_num=4, train_loss=0.880]Epoch 0:   5%|▌         | 22/427 [00:19<05:53,  1.14it/s, v_num=4, train_loss=0.880]Epoch 0:   5%|▌         | 22/427 [00:19<05:55,  1.14it/s, v_num=4, train_loss=0.433]Epoch 0:   5%|▌         | 23/427 [00:21<06:13,  1.08it/s, v_num=4, train_loss=0.433]Epoch 0:   5%|▌         | 23/427 [00:21<06:15,  1.08it/s, v_num=4, train_loss=0.554]Epoch 0:   6%|▌         | 24/427 [00:21<05:59,  1.12it/s, v_num=4, train_loss=0.554]Epoch 0:   6%|▌         | 24/427 [00:21<05:59,  1.12it/s, v_num=4, train_loss=0.608]Epoch 0:   6%|▌         | 25/427 [00:21<05:45,  1.16it/s, v_num=4, train_loss=0.608]Epoch 0:   6%|▌         | 25/427 [00:21<05:46,  1.16it/s, v_num=4, train_loss=0.528]Epoch 0:   6%|▌         | 26/427 [00:21<05:32,  1.20it/s, v_num=4, train_loss=0.528]Epoch 0:   6%|▌         | 26/427 [00:21<05:33,  1.20it/s, v_num=4, train_loss=0.589]Epoch 0:   6%|▋         | 27/427 [00:21<05:24,  1.23it/s, v_num=4, train_loss=0.589]Epoch 0:   6%|▋         | 27/427 [00:22<05:29,  1.22it/s, v_num=4, train_loss=1.630]Epoch 0:   7%|▋         | 28/427 [00:22<05:17,  1.26it/s, v_num=4, train_loss=1.630]Epoch 0:   7%|▋         | 28/427 [00:22<05:17,  1.26it/s, v_num=4, train_loss=0.494]Epoch 0:   7%|▋         | 29/427 [00:22<05:08,  1.29it/s, v_num=4, train_loss=0.494]Epoch 0:   7%|▋         | 29/427 [00:22<05:09,  1.28it/s, v_num=4, train_loss=0.492]Epoch 0:   7%|▋         | 30/427 [00:26<05:53,  1.12it/s, v_num=4, train_loss=0.492]Epoch 0:   7%|▋         | 30/427 [00:27<05:57,  1.11it/s, v_num=4, train_loss=0.648]Epoch 0:   7%|▋         | 31/427 [00:27<05:45,  1.14it/s, v_num=4, train_loss=0.648]Epoch 0:   7%|▋         | 31/427 [00:27<05:45,  1.14it/s, v_num=4, train_loss=0.502]Epoch 0:   7%|▋         | 32/427 [00:27<05:37,  1.17it/s, v_num=4, train_loss=0.502]Epoch 0:   7%|▋         | 32/427 [00:27<05:40,  1.16it/s, v_num=4, train_loss=0.459]Epoch 0:   8%|▊         | 33/427 [00:27<05:30,  1.19it/s, v_num=4, train_loss=0.459]Epoch 0:   8%|▊         | 33/427 [00:27<05:30,  1.19it/s, v_num=4, train_loss=0.668]Epoch 0:   8%|▊         | 34/427 [00:27<05:20,  1.23it/s, v_num=4, train_loss=0.668]Epoch 0:   8%|▊         | 34/427 [00:27<05:20,  1.23it/s, v_num=4, train_loss=0.806]Epoch 0:   8%|▊         | 35/427 [00:27<05:11,  1.26it/s, v_num=4, train_loss=0.806]Epoch 0:   8%|▊         | 35/427 [00:27<05:12,  1.25it/s, v_num=4, train_loss=0.821]Epoch 0:   8%|▊         | 36/427 [00:28<05:04,  1.28it/s, v_num=4, train_loss=0.821]Epoch 0:   8%|▊         | 36/427 [00:28<05:06,  1.28it/s, v_num=4, train_loss=0.530]Epoch 0:   9%|▊         | 37/427 [00:29<05:09,  1.26it/s, v_num=4, train_loss=0.530]Epoch 0:   9%|▊         | 37/427 [00:29<05:12,  1.25it/s, v_num=4, train_loss=0.696]Epoch 0:   9%|▉         | 38/427 [00:29<05:04,  1.28it/s, v_num=4, train_loss=0.696]Epoch 0:   9%|▉         | 38/427 [00:29<05:04,  1.28it/s, v_num=4, train_loss=0.423]Epoch 0:   9%|▉         | 39/427 [00:29<04:56,  1.31it/s, v_num=4, train_loss=0.423]Epoch 0:   9%|▉         | 39/427 [00:29<04:56,  1.31it/s, v_num=4, train_loss=0.570]Epoch 0:   9%|▉         | 40/427 [00:29<04:49,  1.34it/s, v_num=4, train_loss=0.570]Epoch 0:   9%|▉         | 40/427 [00:29<04:49,  1.34it/s, v_num=4, train_loss=0.520]Epoch 0:  10%|▉         | 41/427 [00:29<04:42,  1.37it/s, v_num=4, train_loss=0.520]Epoch 0:  10%|▉         | 41/427 [00:29<04:42,  1.37it/s, v_num=4, train_loss=0.152]Epoch 0:  10%|▉         | 42/427 [00:32<04:59,  1.29it/s, v_num=4, train_loss=0.152]Epoch 0:  10%|▉         | 42/427 [00:32<05:02,  1.27it/s, v_num=4, train_loss=0.500]Epoch 0:  10%|█         | 43/427 [00:54<08:05,  1.26s/it, v_num=4, train_loss=0.500]Epoch 0:  10%|█         | 43/427 [00:54<08:05,  1.26s/it, v_num=4, train_loss=1.940]Epoch 0:  10%|█         | 44/427 [00:54<07:55,  1.24s/it, v_num=4, train_loss=1.940]Epoch 0:  10%|█         | 44/427 [00:54<07:57,  1.25s/it, v_num=4, train_loss=0.475]Epoch 0:  11%|█         | 45/427 [00:54<07:45,  1.22s/it, v_num=4, train_loss=0.475]Epoch 0:  11%|█         | 45/427 [00:54<07:45,  1.22s/it, v_num=4, train_loss=0.624]Epoch 0:  11%|█         | 46/427 [00:54<07:35,  1.19s/it, v_num=4, train_loss=0.624]Epoch 0:  11%|█         | 46/427 [00:54<07:35,  1.19s/it, v_num=4, train_loss=0.390]Epoch 0:  11%|█         | 47/427 [00:55<07:26,  1.18s/it, v_num=4, train_loss=0.390]Epoch 0:  11%|█         | 47/427 [00:55<07:29,  1.18s/it, v_num=4, train_loss=0.405]Epoch 0:  11%|█         | 48/427 [00:55<07:18,  1.16s/it, v_num=4, train_loss=0.405]Epoch 0:  11%|█         | 48/427 [00:55<07:18,  1.16s/it, v_num=4, train_loss=0.140]Epoch 0:  11%|█▏        | 49/427 [00:55<07:09,  1.14s/it, v_num=4, train_loss=0.140]Epoch 0:  11%|█▏        | 49/427 [00:55<07:09,  1.14s/it, v_num=4, train_loss=0.295]Epoch 0:  12%|█▏        | 50/427 [00:55<07:00,  1.12s/it, v_num=4, train_loss=0.295]Epoch 0:  12%|█▏        | 50/427 [00:55<07:01,  1.12s/it, v_num=4, train_loss=0.680]Epoch 0:  12%|█▏        | 51/427 [00:56<06:53,  1.10s/it, v_num=4, train_loss=0.680]Epoch 0:  12%|█▏        | 51/427 [00:56<06:54,  1.10s/it, v_num=4, train_loss=0.385]Epoch 0:  12%|█▏        | 52/427 [00:56<06:49,  1.09s/it, v_num=4, train_loss=0.385]Epoch 0:  12%|█▏        | 52/427 [00:57<06:55,  1.11s/it, v_num=4, train_loss=0.780]Epoch 0:  12%|█▏        | 53/427 [00:57<06:47,  1.09s/it, v_num=4, train_loss=0.780]Epoch 0:  12%|█▏        | 53/427 [00:57<06:48,  1.09s/it, v_num=4, train_loss=0.493]Epoch 0:  13%|█▎        | 54/427 [00:58<06:40,  1.07s/it, v_num=4, train_loss=0.493]Epoch 0:  13%|█▎        | 54/427 [00:58<06:40,  1.07s/it, v_num=4, train_loss=0.426]Epoch 0:  13%|█▎        | 55/427 [00:58<06:34,  1.06s/it, v_num=4, train_loss=0.426]Epoch 0:  13%|█▎        | 55/427 [00:58<06:35,  1.06s/it, v_num=4, train_loss=0.442]Epoch 0:  13%|█▎        | 56/427 [00:58<06:30,  1.05s/it, v_num=4, train_loss=0.442]Epoch 0:  13%|█▎        | 56/427 [00:59<06:34,  1.06s/it, v_num=4, train_loss=0.286]Epoch 0:  13%|█▎        | 57/427 [00:59<06:26,  1.04s/it, v_num=4, train_loss=0.286]Epoch 0:  13%|█▎        | 57/427 [00:59<06:26,  1.04s/it, v_num=4, train_loss=0.510]Epoch 0:  14%|█▎        | 58/427 [00:59<06:19,  1.03s/it, v_num=4, train_loss=0.510]Epoch 0:  14%|█▎        | 58/427 [00:59<06:20,  1.03s/it, v_num=4, train_loss=0.553]Epoch 0:  14%|█▍        | 59/427 [00:59<06:13,  1.01s/it, v_num=4, train_loss=0.553]Epoch 0:  14%|█▍        | 59/427 [00:59<06:13,  1.02s/it, v_num=4, train_loss=0.125]Epoch 0:  14%|█▍        | 60/427 [01:03<06:30,  1.06s/it, v_num=4, train_loss=0.125]Epoch 0:  14%|█▍        | 60/427 [01:04<06:31,  1.07s/it, v_num=4, train_loss=0.359]Epoch 0:  14%|█▍        | 61/427 [01:04<06:25,  1.05s/it, v_num=4, train_loss=0.359]Epoch 0:  14%|█▍        | 61/427 [01:04<06:25,  1.05s/it, v_num=4, train_loss=0.933]Epoch 0:  15%|█▍        | 62/427 [01:04<06:18,  1.04s/it, v_num=4, train_loss=0.933]Epoch 0:  15%|█▍        | 62/427 [01:04<06:18,  1.04s/it, v_num=4, train_loss=0.424]Epoch 0:  15%|█▍        | 63/427 [01:04<06:12,  1.02s/it, v_num=4, train_loss=0.424]Epoch 0:  15%|█▍        | 63/427 [01:04<06:14,  1.03s/it, v_num=4, train_loss=0.428]Epoch 0:  15%|█▍        | 64/427 [01:04<06:08,  1.01s/it, v_num=4, train_loss=0.428]Epoch 0:  15%|█▍        | 64/427 [01:04<06:08,  1.01s/it, v_num=4, train_loss=0.492]Epoch 0:  15%|█▌        | 65/427 [01:05<06:02,  1.00s/it, v_num=4, train_loss=0.492]Epoch 0:  15%|█▌        | 65/427 [01:05<06:02,  1.00s/it, v_num=4, train_loss=0.924]Epoch 0:  15%|█▌        | 66/427 [01:06<06:05,  1.01s/it, v_num=4, train_loss=0.924]Epoch 0:  15%|█▌        | 66/427 [01:07<06:07,  1.02s/it, v_num=4, train_loss=0.455]Epoch 0:  16%|█▌        | 67/427 [01:07<06:01,  1.00s/it, v_num=4, train_loss=0.455]Epoch 0:  16%|█▌        | 67/427 [01:07<06:01,  1.01s/it, v_num=4, train_loss=0.407]Epoch 0:  16%|█▌        | 68/427 [01:07<05:57,  1.00it/s, v_num=4, train_loss=0.407]Epoch 0:  16%|█▌        | 68/427 [01:07<05:58,  1.00it/s, v_num=4, train_loss=0.423]Epoch 0:  16%|█▌        | 69/427 [01:08<05:52,  1.01it/s, v_num=4, train_loss=0.423]Epoch 0:  16%|█▌        | 69/427 [01:08<05:53,  1.01it/s, v_num=4, train_loss=0.472]Epoch 0:  16%|█▋        | 70/427 [01:08<05:48,  1.02it/s, v_num=4, train_loss=0.472]Epoch 0:  16%|█▋        | 70/427 [01:08<05:49,  1.02it/s, v_num=4, train_loss=0.560]Epoch 0:  17%|█▋        | 71/427 [01:08<05:43,  1.04it/s, v_num=4, train_loss=0.560]Epoch 0:  17%|█▋        | 71/427 [01:08<05:43,  1.04it/s, v_num=4, train_loss=0.128]Epoch 0:  17%|█▋        | 72/427 [01:08<05:38,  1.05it/s, v_num=4, train_loss=0.128]Epoch 0:  17%|█▋        | 72/427 [01:08<05:38,  1.05it/s, v_num=4, train_loss=0.515]Epoch 0:  17%|█▋        | 73/427 [01:08<05:33,  1.06it/s, v_num=4, train_loss=0.515]Epoch 0:  17%|█▋        | 73/427 [01:08<05:33,  1.06it/s, v_num=4, train_loss=0.332]Epoch 0:  17%|█▋        | 74/427 [01:15<05:59,  1.02s/it, v_num=4, train_loss=0.332]Epoch 0:  17%|█▋        | 74/427 [01:15<06:00,  1.02s/it, v_num=4, train_loss=0.601]Epoch 0:  18%|█▊        | 75/427 [01:15<05:55,  1.01s/it, v_num=4, train_loss=0.601]Epoch 0:  18%|█▊        | 75/427 [01:16<05:56,  1.01s/it, v_num=4, train_loss=0.422]Epoch 0:  18%|█▊        | 76/427 [01:16<05:51,  1.00s/it, v_num=4, train_loss=0.422]Epoch 0:  18%|█▊        | 76/427 [01:16<05:51,  1.00s/it, v_num=4, train_loss=0.460]Epoch 0:  18%|█▊        | 77/427 [01:16<05:46,  1.01it/s, v_num=4, train_loss=0.460]Epoch 0:  18%|█▊        | 77/427 [01:16<05:46,  1.01it/s, v_num=4, train_loss=0.356]Epoch 0:  18%|█▊        | 78/427 [01:16<05:41,  1.02it/s, v_num=4, train_loss=0.356]Epoch 0:  18%|█▊        | 78/427 [01:16<05:41,  1.02it/s, v_num=4, train_loss=0.716]Epoch 0:  19%|█▊        | 79/427 [01:16<05:36,  1.03it/s, v_num=4, train_loss=0.716]Epoch 0:  19%|█▊        | 79/427 [01:16<05:36,  1.03it/s, v_num=4, train_loss=0.539]Epoch 0:  19%|█▊        | 80/427 [01:16<05:32,  1.04it/s, v_num=4, train_loss=0.539]Epoch 0:  19%|█▊        | 80/427 [01:16<05:33,  1.04it/s, v_num=4, train_loss=0.461]Epoch 0:  19%|█▉        | 81/427 [01:16<05:28,  1.05it/s, v_num=4, train_loss=0.461]Epoch 0:  19%|█▉        | 81/427 [01:16<05:28,  1.05it/s, v_num=4, train_loss=0.423]Epoch 0:  19%|█▉        | 82/427 [01:19<05:33,  1.03it/s, v_num=4, train_loss=0.423]Epoch 0:  19%|█▉        | 82/427 [01:19<05:33,  1.03it/s, v_num=4, train_loss=0.645]Epoch 0:  19%|█▉        | 83/427 [01:19<05:29,  1.05it/s, v_num=4, train_loss=0.645]Epoch 0:  19%|█▉        | 83/427 [01:19<05:29,  1.05it/s, v_num=4, train_loss=0.600]Epoch 0:  20%|█▉        | 84/427 [01:19<05:26,  1.05it/s, v_num=4, train_loss=0.600]Epoch 0:  20%|█▉        | 84/427 [01:20<05:27,  1.05it/s, v_num=4, train_loss=0.643]Epoch 0:  20%|█▉        | 85/427 [01:20<05:23,  1.06it/s, v_num=4, train_loss=0.643]Epoch 0:  20%|█▉        | 85/427 [01:20<05:23,  1.06it/s, v_num=4, train_loss=0.480]Epoch 0:  20%|██        | 86/427 [01:20<05:19,  1.07it/s, v_num=4, train_loss=0.480]Epoch 0:  20%|██        | 86/427 [01:20<05:19,  1.07it/s, v_num=4, train_loss=0.456]Epoch 0:  20%|██        | 87/427 [01:20<05:15,  1.08it/s, v_num=4, train_loss=0.456]Epoch 0:  20%|██        | 87/427 [01:20<05:15,  1.08it/s, v_num=4, train_loss=0.357]Epoch 0:  21%|██        | 88/427 [01:20<05:11,  1.09it/s, v_num=4, train_loss=0.357]Epoch 0:  21%|██        | 88/427 [01:20<05:11,  1.09it/s, v_num=4, train_loss=1.070]Epoch 0:  21%|██        | 89/427 [01:21<05:08,  1.10it/s, v_num=4, train_loss=1.070]Epoch 0:  21%|██        | 89/427 [01:21<05:09,  1.09it/s, v_num=4, train_loss=0.346]Epoch 0:  21%|██        | 90/427 [01:21<05:04,  1.11it/s, v_num=4, train_loss=0.346]Epoch 0:  21%|██        | 90/427 [01:21<05:04,  1.11it/s, v_num=4, train_loss=0.559]Epoch 0:  21%|██▏       | 91/427 [01:21<05:01,  1.12it/s, v_num=4, train_loss=0.559]Epoch 0:  21%|██▏       | 91/427 [01:21<05:01,  1.12it/s, v_num=4, train_loss=0.401]Epoch 0:  22%|██▏       | 92/427 [01:21<04:57,  1.13it/s, v_num=4, train_loss=0.401]Epoch 0:  22%|██▏       | 92/427 [01:21<04:57,  1.13it/s, v_num=4, train_loss=0.452]Epoch 0:  22%|██▏       | 93/427 [01:21<04:53,  1.14it/s, v_num=4, train_loss=0.452]Epoch 0:  22%|██▏       | 93/427 [01:21<04:53,  1.14it/s, v_num=4, train_loss=0.143]Epoch 0:  22%|██▏       | 94/427 [01:21<04:50,  1.15it/s, v_num=4, train_loss=0.143]Epoch 0:  22%|██▏       | 94/427 [01:22<04:50,  1.15it/s, v_num=4, train_loss=0.368]Epoch 0:  22%|██▏       | 95/427 [01:24<04:56,  1.12it/s, v_num=4, train_loss=0.368]Epoch 0:  22%|██▏       | 95/427 [01:25<04:57,  1.12it/s, v_num=4, train_loss=0.380]Epoch 0:  22%|██▏       | 96/427 [01:25<04:53,  1.13it/s, v_num=4, train_loss=0.380]Epoch 0:  22%|██▏       | 96/427 [01:25<04:53,  1.13it/s, v_num=4, train_loss=0.434]Epoch 0:  23%|██▎       | 97/427 [01:25<04:50,  1.14it/s, v_num=4, train_loss=0.434]Epoch 0:  23%|██▎       | 97/427 [01:25<04:50,  1.14it/s, v_num=4, train_loss=0.394]Epoch 0:  23%|██▎       | 98/427 [01:25<04:46,  1.15it/s, v_num=4, train_loss=0.394]Epoch 0:  23%|██▎       | 98/427 [01:25<04:46,  1.15it/s, v_num=4, train_loss=0.363]Epoch 0:  23%|██▎       | 99/427 [01:25<04:43,  1.16it/s, v_num=4, train_loss=0.363]Epoch 0:  23%|██▎       | 99/427 [01:25<04:43,  1.16it/s, v_num=4, train_loss=0.434]Epoch 0:  23%|██▎       | 100/427 [01:25<04:40,  1.17it/s, v_num=4, train_loss=0.434]Epoch 0:  23%|██▎       | 100/427 [01:25<04:40,  1.17it/s, v_num=4, train_loss=0.296]Epoch 0:  24%|██▎       | 101/427 [01:50<05:57,  1.10s/it, v_num=4, train_loss=0.296]Epoch 0:  24%|██▎       | 101/427 [01:50<05:57,  1.10s/it, v_num=4, train_loss=0.352]Epoch 0:  24%|██▍       | 102/427 [01:51<05:54,  1.09s/it, v_num=4, train_loss=0.352]Epoch 0:  24%|██▍       | 102/427 [01:51<05:54,  1.09s/it, v_num=4, train_loss=0.828]Epoch 0:  24%|██▍       | 103/427 [01:51<05:51,  1.08s/it, v_num=4, train_loss=0.828]Epoch 0:  24%|██▍       | 103/427 [01:52<05:52,  1.09s/it, v_num=4, train_loss=0.380]Epoch 0:  24%|██▍       | 104/427 [01:52<05:48,  1.08s/it, v_num=4, train_loss=0.380]Epoch 0:  24%|██▍       | 104/427 [01:52<05:48,  1.08s/it, v_num=4, train_loss=0.496]Epoch 0:  25%|██▍       | 105/427 [01:52<05:44,  1.07s/it, v_num=4, train_loss=0.496]Epoch 0:  25%|██▍       | 105/427 [01:52<05:44,  1.07s/it, v_num=4, train_loss=0.439]Epoch 0:  25%|██▍       | 106/427 [01:52<05:40,  1.06s/it, v_num=4, train_loss=0.439]Epoch 0:  25%|██▍       | 106/427 [01:52<05:40,  1.06s/it, v_num=4, train_loss=0.452]Epoch 0:  25%|██▌       | 107/427 [01:52<05:37,  1.05s/it, v_num=4, train_loss=0.452]Epoch 0:  25%|██▌       | 107/427 [01:53<05:38,  1.06s/it, v_num=4, train_loss=0.367]Epoch 0:  25%|██▌       | 108/427 [01:53<05:34,  1.05s/it, v_num=4, train_loss=0.367]Epoch 0:  25%|██▌       | 108/427 [01:53<05:34,  1.05s/it, v_num=4, train_loss=0.329]Epoch 0:  26%|██▌       | 109/427 [01:55<05:35,  1.06s/it, v_num=4, train_loss=0.329]Epoch 0:  26%|██▌       | 109/427 [01:55<05:36,  1.06s/it, v_num=4, train_loss=0.329]Epoch 0:  26%|██▌       | 110/427 [01:55<05:32,  1.05s/it, v_num=4, train_loss=0.329]Epoch 0:  26%|██▌       | 110/427 [01:55<05:32,  1.05s/it, v_num=4, train_loss=0.358]Epoch 0:  26%|██▌       | 111/427 [01:55<05:28,  1.04s/it, v_num=4, train_loss=0.358]Epoch 0:  26%|██▌       | 111/427 [01:55<05:28,  1.04s/it, v_num=4, train_loss=0.474]Epoch 0:  26%|██▌       | 112/427 [01:55<05:25,  1.03s/it, v_num=4, train_loss=0.474]Epoch 0:  26%|██▌       | 112/427 [01:55<05:25,  1.03s/it, v_num=4, train_loss=0.292]Epoch 0:  26%|██▋       | 113/427 [01:55<05:21,  1.03s/it, v_num=4, train_loss=0.292]Epoch 0:  26%|██▋       | 113/427 [01:56<05:22,  1.03s/it, v_num=4, train_loss=0.383]Epoch 0:  27%|██▋       | 114/427 [01:56<05:19,  1.02s/it, v_num=4, train_loss=0.383]Epoch 0:  27%|██▋       | 114/427 [01:56<05:19,  1.02s/it, v_num=4, train_loss=0.345]Epoch 0:  27%|██▋       | 115/427 [01:56<05:16,  1.01s/it, v_num=4, train_loss=0.345]Epoch 0:  27%|██▋       | 115/427 [01:56<05:16,  1.01s/it, v_num=4, train_loss=0.311]Epoch 0:  27%|██▋       | 116/427 [01:56<05:12,  1.01s/it, v_num=4, train_loss=0.311]Epoch 0:  27%|██▋       | 116/427 [01:56<05:12,  1.01s/it, v_num=4, train_loss=0.411]Epoch 0:  27%|██▋       | 117/427 [01:56<05:09,  1.00it/s, v_num=4, train_loss=0.411]Epoch 0:  27%|██▋       | 117/427 [01:56<05:09,  1.00it/s, v_num=4, train_loss=0.448]Epoch 0:  28%|██▊       | 118/427 [01:59<05:12,  1.01s/it, v_num=4, train_loss=0.448]Epoch 0:  28%|██▊       | 118/427 [01:59<05:12,  1.01s/it, v_num=4, train_loss=0.687]Epoch 0:  28%|██▊       | 119/427 [01:59<05:09,  1.00s/it, v_num=4, train_loss=0.687]Epoch 0:  28%|██▊       | 119/427 [01:59<05:09,  1.00s/it, v_num=4, train_loss=0.345]Epoch 0:  28%|██▊       | 120/427 [01:59<05:06,  1.00it/s, v_num=4, train_loss=0.345]Epoch 0:  28%|██▊       | 120/427 [01:59<05:06,  1.00it/s, v_num=4, train_loss=0.343]Epoch 0:  28%|██▊       | 121/427 [02:00<05:03,  1.01it/s, v_num=4, train_loss=0.343]Epoch 0:  28%|██▊       | 121/427 [02:00<05:04,  1.01it/s, v_num=4, train_loss=0.335]Epoch 0:  29%|██▊       | 122/427 [02:00<05:01,  1.01it/s, v_num=4, train_loss=0.335]Epoch 0:  29%|██▊       | 122/427 [02:00<05:01,  1.01it/s, v_num=4, train_loss=0.519]Epoch 0:  29%|██▉       | 123/427 [02:00<04:58,  1.02it/s, v_num=4, train_loss=0.519]Epoch 0:  29%|██▉       | 123/427 [02:00<04:58,  1.02it/s, v_num=4, train_loss=0.134]Epoch 0:  29%|██▉       | 124/427 [02:00<04:55,  1.03it/s, v_num=4, train_loss=0.134]Epoch 0:  29%|██▉       | 124/427 [02:00<04:55,  1.03it/s, v_num=4, train_loss=0.339]Epoch 0:  29%|██▉       | 125/427 [02:27<05:57,  1.18s/it, v_num=4, train_loss=0.339]Epoch 0:  29%|██▉       | 125/427 [02:27<05:57,  1.18s/it, v_num=4, train_loss=1.270]Epoch 0:  30%|██▉       | 126/427 [02:27<05:53,  1.17s/it, v_num=4, train_loss=1.270]Epoch 0:  30%|██▉       | 126/427 [02:28<05:53,  1.17s/it, v_num=4, train_loss=0.449]Epoch 0:  30%|██▉       | 127/427 [02:28<05:49,  1.17s/it, v_num=4, train_loss=0.449]Epoch 0:  30%|██▉       | 127/427 [02:28<05:49,  1.17s/it, v_num=4, train_loss=0.867]Epoch 0:  30%|██▉       | 128/427 [02:28<05:46,  1.16s/it, v_num=4, train_loss=0.867]Epoch 0:  30%|██▉       | 128/427 [02:28<05:47,  1.16s/it, v_num=4, train_loss=0.338]Epoch 0:  30%|███       | 129/427 [02:29<05:44,  1.16s/it, v_num=4, train_loss=0.338]Epoch 0:  30%|███       | 129/427 [02:29<05:45,  1.16s/it, v_num=4, train_loss=0.512]Epoch 0:  30%|███       | 130/427 [02:29<05:41,  1.15s/it, v_num=4, train_loss=0.512]Epoch 0:  30%|███       | 130/427 [02:29<05:41,  1.15s/it, v_num=4, train_loss=0.646]Epoch 0:  31%|███       | 131/427 [02:29<05:38,  1.14s/it, v_num=4, train_loss=0.646]Epoch 0:  31%|███       | 131/427 [02:29<05:38,  1.14s/it, v_num=4, train_loss=0.391]Epoch 0:  31%|███       | 132/427 [02:29<05:34,  1.13s/it, v_num=4, train_loss=0.391]Epoch 0:  31%|███       | 132/427 [02:29<05:34,  1.13s/it, v_num=4, train_loss=0.401]Epoch 0:  31%|███       | 133/427 [02:29<05:31,  1.13s/it, v_num=4, train_loss=0.401]Epoch 0:  31%|███       | 133/427 [02:29<05:31,  1.13s/it, v_num=4, train_loss=0.385]Epoch 0:  31%|███▏      | 134/427 [02:30<05:28,  1.12s/it, v_num=4, train_loss=0.385]Epoch 0:  31%|███▏      | 134/427 [02:30<05:28,  1.12s/it, v_num=4, train_loss=0.354]Epoch 0:  32%|███▏      | 135/427 [02:30<05:25,  1.12s/it, v_num=4, train_loss=0.354]Epoch 0:  32%|███▏      | 135/427 [02:31<05:26,  1.12s/it, v_num=4, train_loss=0.576]Epoch 0:  32%|███▏      | 136/427 [02:31<05:23,  1.11s/it, v_num=4, train_loss=0.576]Epoch 0:  32%|███▏      | 136/427 [02:31<05:23,  1.11s/it, v_num=4, train_loss=0.307]Epoch 0:  32%|███▏      | 137/427 [02:31<05:20,  1.10s/it, v_num=4, train_loss=0.307]Epoch 0:  32%|███▏      | 137/427 [02:31<05:20,  1.10s/it, v_num=4, train_loss=0.129]Epoch 0:  32%|███▏      | 138/427 [02:31<05:17,  1.10s/it, v_num=4, train_loss=0.129]Epoch 0:  32%|███▏      | 138/427 [02:31<05:18,  1.10s/it, v_num=4, train_loss=0.361]Epoch 0:  33%|███▎      | 139/427 [02:32<05:14,  1.09s/it, v_num=4, train_loss=0.361]Epoch 0:  33%|███▎      | 139/427 [02:32<05:15,  1.09s/it, v_num=4, train_loss=0.598]Epoch 0:  33%|███▎      | 140/427 [02:32<05:11,  1.09s/it, v_num=4, train_loss=0.598]Epoch 0:  33%|███▎      | 140/427 [02:32<05:12,  1.09s/it, v_num=4, train_loss=0.489]Epoch 0:  33%|███▎      | 141/427 [02:32<05:08,  1.08s/it, v_num=4, train_loss=0.489]Epoch 0:  33%|███▎      | 141/427 [02:32<05:08,  1.08s/it, v_num=4, train_loss=0.923]Epoch 0:  33%|███▎      | 142/427 [02:32<05:05,  1.07s/it, v_num=4, train_loss=0.923]Epoch 0:  33%|███▎      | 142/427 [02:32<05:05,  1.07s/it, v_num=4, train_loss=0.515]Epoch 0:  33%|███▎      | 143/427 [02:39<05:15,  1.11s/it, v_num=4, train_loss=0.515]Epoch 0:  33%|███▎      | 143/427 [02:39<05:16,  1.11s/it, v_num=4, train_loss=0.531]Epoch 0:  34%|███▎      | 144/427 [02:39<05:13,  1.11s/it, v_num=4, train_loss=0.531]Epoch 0:  34%|███▎      | 144/427 [02:40<05:14,  1.11s/it, v_num=4, train_loss=0.495]Epoch 0:  34%|███▍      | 145/427 [02:40<05:11,  1.10s/it, v_num=4, train_loss=0.495]Epoch 0:  34%|███▍      | 145/427 [02:40<05:11,  1.10s/it, v_num=4, train_loss=0.436]Epoch 0:  34%|███▍      | 146/427 [02:40<05:08,  1.10s/it, v_num=4, train_loss=0.436]Epoch 0:  34%|███▍      | 146/427 [02:40<05:09,  1.10s/it, v_num=4, train_loss=0.338]Epoch 0:  34%|███▍      | 147/427 [02:40<05:06,  1.09s/it, v_num=4, train_loss=0.338]Epoch 0:  34%|███▍      | 147/427 [02:41<05:06,  1.10s/it, v_num=4, train_loss=0.538]Epoch 0:  35%|███▍      | 148/427 [02:41<05:03,  1.09s/it, v_num=4, train_loss=0.538]Epoch 0:  35%|███▍      | 148/427 [02:41<05:04,  1.09s/it, v_num=4, train_loss=0.322]Epoch 0:  35%|███▍      | 149/427 [02:41<05:01,  1.08s/it, v_num=4, train_loss=0.322]Epoch 0:  35%|███▍      | 149/427 [02:41<05:01,  1.08s/it, v_num=4, train_loss=0.355]Epoch 0:  35%|███▌      | 150/427 [02:41<04:58,  1.08s/it, v_num=4, train_loss=0.355]Epoch 0:  35%|███▌      | 150/427 [02:41<04:58,  1.08s/it, v_num=4, train_loss=0.327]Epoch 0:  35%|███▌      | 151/427 [02:41<04:56,  1.07s/it, v_num=4, train_loss=0.327]Epoch 0:  35%|███▌      | 151/427 [02:41<04:56,  1.07s/it, v_num=4, train_loss=0.778]Epoch 0:  36%|███▌      | 152/427 [02:42<04:53,  1.07s/it, v_num=4, train_loss=0.778]Epoch 0:  36%|███▌      | 152/427 [02:42<04:53,  1.07s/it, v_num=4, train_loss=0.461]Epoch 0:  36%|███▌      | 153/427 [02:42<04:50,  1.06s/it, v_num=4, train_loss=0.461]Epoch 0:  36%|███▌      | 153/427 [02:42<04:51,  1.06s/it, v_num=4, train_loss=0.587]Epoch 0:  36%|███▌      | 154/427 [02:42<04:48,  1.06s/it, v_num=4, train_loss=0.587]Epoch 0:  36%|███▌      | 154/427 [02:42<04:48,  1.06s/it, v_num=4, train_loss=0.394]Epoch 0:  36%|███▋      | 155/427 [02:42<04:45,  1.05s/it, v_num=4, train_loss=0.394]Epoch 0:  36%|███▋      | 155/427 [02:42<04:46,  1.05s/it, v_num=4, train_loss=0.516]Epoch 0:  37%|███▋      | 156/427 [02:43<04:43,  1.05s/it, v_num=4, train_loss=0.516]Epoch 0:  37%|███▋      | 156/427 [02:43<04:43,  1.05s/it, v_num=4, train_loss=0.502]Epoch 0:  37%|███▋      | 157/427 [02:43<04:40,  1.04s/it, v_num=4, train_loss=0.502]Epoch 0:  37%|███▋      | 157/427 [02:43<04:40,  1.04s/it, v_num=4, train_loss=0.350]Epoch 0:  37%|███▋      | 158/427 [02:43<04:38,  1.03s/it, v_num=4, train_loss=0.350]Epoch 0:  37%|███▋      | 158/427 [02:43<04:38,  1.03s/it, v_num=4, train_loss=0.384]Epoch 0:  37%|███▋      | 159/427 [02:46<04:39,  1.04s/it, v_num=4, train_loss=0.384]Epoch 0:  37%|███▋      | 159/427 [02:46<04:40,  1.04s/it, v_num=4, train_loss=0.476]Epoch 0:  37%|███▋      | 160/427 [02:46<04:37,  1.04s/it, v_num=4, train_loss=0.476]Epoch 0:  37%|███▋      | 160/427 [02:46<04:37,  1.04s/it, v_num=4, train_loss=0.321]Epoch 0:  38%|███▊      | 161/427 [02:46<04:35,  1.03s/it, v_num=4, train_loss=0.321]Epoch 0:  38%|███▊      | 161/427 [02:46<04:35,  1.04s/it, v_num=4, train_loss=0.335]Epoch 0:  38%|███▊      | 162/427 [02:46<04:32,  1.03s/it, v_num=4, train_loss=0.335]Epoch 0:  38%|███▊      | 162/427 [02:46<04:32,  1.03s/it, v_num=4, train_loss=0.337]Epoch 0:  38%|███▊      | 163/427 [02:53<04:40,  1.06s/it, v_num=4, train_loss=0.337]Epoch 0:  38%|███▊      | 163/427 [02:53<04:41,  1.07s/it, v_num=4, train_loss=0.533]Epoch 0:  38%|███▊      | 164/427 [02:53<04:38,  1.06s/it, v_num=4, train_loss=0.533]Epoch 0:  38%|███▊      | 164/427 [02:53<04:38,  1.06s/it, v_num=4, train_loss=0.295]Epoch 0:  39%|███▊      | 165/427 [02:54<04:36,  1.06s/it, v_num=4, train_loss=0.295]Epoch 0:  39%|███▊      | 165/427 [02:54<04:37,  1.06s/it, v_num=4, train_loss=0.278]Epoch 0:  39%|███▉      | 166/427 [02:54<04:34,  1.05s/it, v_num=4, train_loss=0.278]Epoch 0:  39%|███▉      | 166/427 [02:54<04:34,  1.05s/it, v_num=4, train_loss=0.393]Epoch 0:  39%|███▉      | 167/427 [02:54<04:31,  1.05s/it, v_num=4, train_loss=0.393]Epoch 0:  39%|███▉      | 167/427 [02:54<04:31,  1.05s/it, v_num=4, train_loss=0.670]Epoch 0:  39%|███▉      | 168/427 [02:54<04:29,  1.04s/it, v_num=4, train_loss=0.670]Epoch 0:  39%|███▉      | 168/427 [02:55<04:30,  1.04s/it, v_num=4, train_loss=1.680]Epoch 0:  40%|███▉      | 169/427 [02:55<04:27,  1.04s/it, v_num=4, train_loss=1.680]Epoch 0:  40%|███▉      | 169/427 [02:55<04:28,  1.04s/it, v_num=4, train_loss=0.291]Epoch 0:  40%|███▉      | 170/427 [02:55<04:25,  1.03s/it, v_num=4, train_loss=0.291]Epoch 0:  40%|███▉      | 170/427 [02:55<04:25,  1.03s/it, v_num=4, train_loss=0.606]Epoch 0:  40%|████      | 171/427 [03:01<04:31,  1.06s/it, v_num=4, train_loss=0.606]Epoch 0:  40%|████      | 171/427 [03:01<04:32,  1.06s/it, v_num=4, train_loss=0.377]Epoch 0:  40%|████      | 172/427 [03:01<04:29,  1.06s/it, v_num=4, train_loss=0.377]Epoch 0:  40%|████      | 172/427 [03:01<04:29,  1.06s/it, v_num=4, train_loss=0.453]Epoch 0:  41%|████      | 173/427 [03:02<04:27,  1.05s/it, v_num=4, train_loss=0.453]Epoch 0:  41%|████      | 173/427 [03:02<04:27,  1.05s/it, v_num=4, train_loss=0.356]Epoch 0:  41%|████      | 174/427 [03:02<04:25,  1.05s/it, v_num=4, train_loss=0.356]Epoch 0:  41%|████      | 174/427 [03:02<04:25,  1.05s/it, v_num=4, train_loss=0.360]Epoch 0:  41%|████      | 175/427 [03:03<04:23,  1.05s/it, v_num=4, train_loss=0.360]Epoch 0:  41%|████      | 175/427 [03:03<04:23,  1.05s/it, v_num=4, train_loss=1.640]Epoch 0:  41%|████      | 176/427 [03:03<04:21,  1.04s/it, v_num=4, train_loss=1.640]Epoch 0:  41%|████      | 176/427 [03:03<04:22,  1.04s/it, v_num=4, train_loss=0.395]Epoch 0:  41%|████▏     | 177/427 [03:03<04:19,  1.04s/it, v_num=4, train_loss=0.395]Epoch 0:  41%|████▏     | 177/427 [03:03<04:19,  1.04s/it, v_num=4, train_loss=0.154]Epoch 0:  42%|████▏     | 178/427 [03:03<04:17,  1.03s/it, v_num=4, train_loss=0.154]Epoch 0:  42%|████▏     | 178/427 [03:03<04:17,  1.03s/it, v_num=4, train_loss=0.445]Epoch 0:  42%|████▏     | 179/427 [03:03<04:14,  1.03s/it, v_num=4, train_loss=0.445]Epoch 0:  42%|████▏     | 179/427 [03:03<04:14,  1.03s/it, v_num=4, train_loss=0.409]Epoch 0:  42%|████▏     | 180/427 [03:04<04:12,  1.02s/it, v_num=4, train_loss=0.409]Epoch 0:  42%|████▏     | 180/427 [03:04<04:13,  1.03s/it, v_num=4, train_loss=0.480]Epoch 0:  42%|████▏     | 181/427 [03:04<04:11,  1.02s/it, v_num=4, train_loss=0.480]Epoch 0:  42%|████▏     | 181/427 [03:04<04:11,  1.02s/it, v_num=4, train_loss=0.153]Epoch 0:  43%|████▎     | 182/427 [03:04<04:08,  1.02s/it, v_num=4, train_loss=0.153]Epoch 0:  43%|████▎     | 182/427 [03:04<04:08,  1.02s/it, v_num=4, train_loss=0.594]Epoch 0:  43%|████▎     | 183/427 [03:04<04:06,  1.01s/it, v_num=4, train_loss=0.594]Epoch 0:  43%|████▎     | 183/427 [03:04<04:06,  1.01s/it, v_num=4, train_loss=0.306]Epoch 0:  43%|████▎     | 184/427 [03:04<04:04,  1.01s/it, v_num=4, train_loss=0.306]Epoch 0:  43%|████▎     | 184/427 [03:04<04:04,  1.01s/it, v_num=4, train_loss=0.347]Epoch 0:  43%|████▎     | 185/427 [03:05<04:02,  1.00s/it, v_num=4, train_loss=0.347]Epoch 0:  43%|████▎     | 185/427 [03:05<04:02,  1.00s/it, v_num=4, train_loss=0.438]Epoch 0:  44%|████▎     | 186/427 [03:05<04:00,  1.00it/s, v_num=4, train_loss=0.438]Epoch 0:  44%|████▎     | 186/427 [03:05<04:00,  1.00it/s, v_num=4, train_loss=0.510]Epoch 0:  44%|████▍     | 187/427 [03:10<04:05,  1.02s/it, v_num=4, train_loss=0.510]Epoch 0:  44%|████▍     | 187/427 [03:11<04:05,  1.02s/it, v_num=4, train_loss=0.368]Epoch 0:  44%|████▍     | 188/427 [03:11<04:03,  1.02s/it, v_num=4, train_loss=0.368]Epoch 0:  44%|████▍     | 188/427 [03:11<04:03,  1.02s/it, v_num=4, train_loss=0.274]Epoch 0:  44%|████▍     | 189/427 [03:11<04:01,  1.01s/it, v_num=4, train_loss=0.274]Epoch 0:  44%|████▍     | 189/427 [03:12<04:01,  1.02s/it, v_num=4, train_loss=0.308]Epoch 0:  44%|████▍     | 190/427 [03:12<03:59,  1.01s/it, v_num=4, train_loss=0.308]Epoch 0:  44%|████▍     | 190/427 [03:12<03:59,  1.01s/it, v_num=4, train_loss=0.376]Epoch 0:  45%|████▍     | 191/427 [03:12<03:58,  1.01s/it, v_num=4, train_loss=0.376]Epoch 0:  45%|████▍     | 191/427 [03:12<03:58,  1.01s/it, v_num=4, train_loss=0.337]Epoch 0:  45%|████▍     | 192/427 [03:12<03:56,  1.00s/it, v_num=4, train_loss=0.337]Epoch 0:  45%|████▍     | 192/427 [03:12<03:56,  1.00s/it, v_num=4, train_loss=0.473]Epoch 0:  45%|████▌     | 193/427 [03:13<03:54,  1.00s/it, v_num=4, train_loss=0.473]Epoch 0:  45%|████▌     | 193/427 [03:13<03:54,  1.00s/it, v_num=4, train_loss=0.409]Epoch 0:  45%|████▌     | 194/427 [03:13<03:52,  1.00it/s, v_num=4, train_loss=0.409]Epoch 0:  45%|████▌     | 194/427 [03:13<03:52,  1.00it/s, v_num=4, train_loss=0.597]Epoch 0:  46%|████▌     | 195/427 [03:16<03:53,  1.01s/it, v_num=4, train_loss=0.597]Epoch 0:  46%|████▌     | 195/427 [03:16<03:53,  1.01s/it, v_num=4, train_loss=0.420]Epoch 0:  46%|████▌     | 196/427 [03:16<03:51,  1.00s/it, v_num=4, train_loss=0.420]Epoch 0:  46%|████▌     | 196/427 [03:16<03:51,  1.00s/it, v_num=4, train_loss=0.311]Epoch 0:  46%|████▌     | 197/427 [03:17<03:50,  1.00s/it, v_num=4, train_loss=0.311]Epoch 0:  46%|████▌     | 197/427 [03:17<03:50,  1.00s/it, v_num=4, train_loss=1.060]Epoch 0:  46%|████▋     | 198/427 [03:17<03:48,  1.00it/s, v_num=4, train_loss=1.060]Epoch 0:  46%|████▋     | 198/427 [03:18<03:49,  1.00s/it, v_num=4, train_loss=0.252]Epoch 0:  47%|████▋     | 199/427 [03:37<04:09,  1.09s/it, v_num=4, train_loss=0.252]Epoch 0:  47%|████▋     | 199/427 [03:37<04:09,  1.09s/it, v_num=4, train_loss=0.206]Epoch 0:  47%|████▋     | 200/427 [03:37<04:07,  1.09s/it, v_num=4, train_loss=0.206]Epoch 0:  47%|████▋     | 200/427 [03:37<04:07,  1.09s/it, v_num=4, train_loss=0.369]Epoch 0:  47%|████▋     | 201/427 [03:37<04:05,  1.08s/it, v_num=4, train_loss=0.369]Epoch 0:  47%|████▋     | 201/427 [03:37<04:05,  1.08s/it, v_num=4, train_loss=0.345]Epoch 0:  47%|████▋     | 202/427 [03:38<04:02,  1.08s/it, v_num=4, train_loss=0.345]Epoch 0:  47%|████▋     | 202/427 [03:38<04:02,  1.08s/it, v_num=4, train_loss=0.410]Epoch 0:  48%|████▊     | 203/427 [03:38<04:00,  1.07s/it, v_num=4, train_loss=0.410]Epoch 0:  48%|████▊     | 203/427 [03:38<04:00,  1.07s/it, v_num=4, train_loss=0.299]Epoch 0:  48%|████▊     | 204/427 [03:38<03:58,  1.07s/it, v_num=4, train_loss=0.299]Epoch 0:  48%|████▊     | 204/427 [03:38<03:58,  1.07s/it, v_num=4, train_loss=0.364]Epoch 0:  48%|████▊     | 205/427 [03:38<03:56,  1.07s/it, v_num=4, train_loss=0.364]Epoch 0:  48%|████▊     | 205/427 [03:38<03:57,  1.07s/it, v_num=4, train_loss=0.920]
+Processing sample SPA131
+
+Processing sample MISC41
+
+Processing sample MISC68
+
+Processing sample NCBI707
+
+Processing sample SPA90
+
+Processing sample SPA45
+
+Processing sample MEND9
+
+Processing sample MEND23
+
+Processing sample NCBI880
+
+Processing sample NCBI520
+
+Processing sample MEND1
+
+Processing sample NCBI635
+
+Processing sample NCBI504
+
+Processing sample NCBI567
+
+Processing sample TENX50
+
+Processing sample NCBI714
+
+Processing sample TENX30
+
+Processing sample NCBI814
+
+Processing sample SPA56
+
+Processing sample MEND93
+
+Processing sample TENX46
+
+Processing sample NCBI641
+
+Processing sample SPA48
+
+Processing sample MEND35
+
+Processing sample INT6
+
+Processing sample NCBI701
+
+Processing sample SPA112
+
+Processing sample SPA1
+
+Processing sample TENX106
+
+Processing sample SPA86
+
+Processing sample TENX40
+
+Processing sample SPA74
+
+Processing sample SPA144
+
+Processing sample NCBI655
+
+Processing sample MISC13
+
+Processing sample MEND37
+
+Processing sample INT21
+
+Processing sample MEND160
+
+Processing sample INT10
+
+Processing sample SPA140
+
+Processing sample NCBI483
+
+Processing sample NCBI460
+
+Processing sample MISC7
+
+Processing sample MISC30
+
+Processing sample SPA134
+
+Processing sample MISC12
+
+Processing sample MISC8
+
+Processing sample NCBI770
+
+Processing sample MEND54
+
+Processing sample SPA104
+
+Processing sample SPA77
+
+Processing sample MISC70
+
+Processing sample SPA145
+
+Processing sample NCBI469
+
+Processing sample NCBI576
+
+Processing sample TENX158
+
+Processing sample MISC57
+
+Processing sample ZEN47
+
+Processing sample MEND67
+
+Processing sample NCBI776
+
+Processing sample NCBI692
+
+Processing sample MEND48
+
+Processing sample MISC54
+
+Processing sample NCBI694
+
+Processing sample MEND90
+
+Processing sample SPA132
+
+Processing sample MEND5
+
+Processing sample MISC67
+
+Processing sample TENX133
+
+Processing sample NCBI481
+
+Processing sample TENX115
+
+Processing sample TENX153
+
+Processing sample INT28
+
+Processing sample SPA93
+
+Processing sample TENX29
+
+Processing sample MISC43
+
+Processing sample MEND88
+
+Processing sample MEND143
+
+Processing sample SPA127
+
+Processing sample MEND147
+
+Processing sample MISC39
+
+Processing sample TENX99
+
+Processing sample SPA138
+
+Processing sample SPA47
+
+Processing sample ZEN41
+
+Processing sample NCBI811
+
+Processing sample MEND20
+
+Processing sample TENX141
+
+Processing sample NCBI873
+
+Processing sample TENX97
+
+Processing sample MEND140
+
+Processing sample SPA40
+
+Processing sample NCBI563
+
+Processing sample MEND36
+
+Processing sample SPA57
+
+Processing sample NCBI491
+
+Processing sample NCBI761
+
+Processing sample MISC10
+
+Processing sample MEND16
+
+Processing sample NCBI813
+
+Processing sample NCBI516
+
+Processing sample MEND148
+
+Processing sample MEND156
+
+Processing sample MISC15
+
+Processing sample NCBI684
+
+Processing sample MISC129
+
+Processing sample SPA53
+
+Processing sample MEND59
+
+Processing sample MEND162
+
+Processing sample ZEN43
+
+Processing sample INT2
+
+Processing sample NCBI465
+
+Processing sample MISC9
+
+Processing sample NCBI517
+
+Processing sample NCBI767
+
+Processing sample MISC62
+
+Processing sample NCBI602
+
+Processing sample SPA33
+
+Processing sample TENX72
+
+Processing sample SPA68
+
+Processing sample SPA0
+
+Processing sample MISC73
+
+Processing sample NCBI860
+
+Processing sample SPA100
+
+Processing sample SPA63
+
+Processing sample NCBI636
+
+Processing sample NCBI637
+
+Processing sample TENX71
+
+Processing sample NCBI4
+
+Processing sample NCBI681
+
+Processing sample SPA118
+
+Processing sample MEND13
+
+Processing sample TENX140
+
+Processing sample MISC48
+
+Processing sample SPA153
+
+Processing sample SPA117
+
+Processing sample SPA61
+
+Processing sample SPA142
+
+Processing sample NCBI831
+
+Processing sample MISC6
+
+Processing sample INT22
+
+Processing sample NCBI467
+
+Processing sample SPA71
+
+Processing sample SPA64
+
+Processing sample MISC50
+
+Processing sample NCBI572
+
+Processing sample MEND144
+
+Processing sample SPA36
+
+Processing sample SPA85
+
+Processing sample NCBI634
+
+Processing sample INT26
+
+Processing sample NCBI827
+
+Processing sample MEND18
+
+Processing sample NCBI522
+
+Processing sample SPA128
+
+Processing sample INT18
+
+Processing sample INT20
+
+Processing sample NCBI861
+
+Processing sample TENX154
+
+Processing sample SPA124
+
+Processing sample NCBI867
+
+Processing sample NCBI695
+
+Processing sample MEND62
+
+Processing sample TENX123
+
+Processing sample NCBI479
+
+Processing sample MEND141
+
+Processing sample MISC33
+
+Processing sample NCBI713
+
+Processing sample SPA107
+
+Processing sample NCBI759
+
+Processing sample MISC19
+
+Processing sample MISC56
+
+Processing sample TENX121
+
+Processing sample MEND61
+
+Processing sample NCBI464
+
+Processing sample SPA152
+
+Processing sample NCBI682
+
+Processing sample SPA2
+
+Processing sample NCBI474
+
+Processing sample MEND68
+
+Processing sample MISC27
+
+Processing sample MEND15
+
+Processing sample NCBI480
+
+Processing sample NCBI566
+
+Processing sample ZEN42
+
+Processing sample TENX156
+
+Processing sample NCBI473
+
+Processing sample SPA67
+
+Processing sample INT24
+
+Processing sample MISC64
+
+Processing sample NCBI536
+
+Processing sample NCBI594
+
+Processing sample NCBI711
+
+Processing sample NCBI629
+
+Processing sample SPA76
+
+Processing sample MEND146
+
+Processing sample TENX105
+
+Processing sample NCBI562
+
+Processing sample MISC45
+
+Processing sample SPA79
+
+Processing sample NCBI630
+
+Processing sample NCBI859
+
+Processing sample TENX41
+
+Processing sample NCBI524
+
+Processing sample MISC29
+
+Processing sample NCBI815
+
+Processing sample TENX73
+
+Processing sample NCBI638
+
+Processing sample SPA55
+
+Processing sample TENX95
+
+Processing sample NCBI503
+
+Processing sample NCBI870
+
+Processing sample NCBI488
+
+Processing sample NCBI564
+
+Processing sample MISC40
+
+Processing sample MISC2
+
+Processing sample NCBI575
+
+Processing sample TENX15
+
+Processing sample TENX118
+
+Processing sample TENX149
+
+Processing sample TENX111
+
+Processing sample TENX39
+Traceback (most recent call last):
+  File "/work/bose_lab/Jamie/Summer/models/THItoGene-Fork/train-test-HEST.py", line 287, in <module>
+    pred_train, gt_train, R_train, p_val_train = train(
+  File "/work/bose_lab/Jamie/Summer/models/THItoGene-Fork/train-test-HEST.py", line 101, in train
+    trainer.fit(model, train_loader, val_loader)
+  File "/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py", line 529, in fit
+    call._call_and_handle_interrupt(
+  File "/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/pytorch_lightning/trainer/call.py", line 42, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py", line 568, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py", line 973, in _run
+    results = self._run_stage()
+  File "/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py", line 1016, in _run_stage
+    self.fit_loop.run()
+  File "/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/pytorch_lightning/loops/fit_loop.py", line 201, in run
+    self.advance()
+  File "/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/pytorch_lightning/loops/fit_loop.py", line 354, in advance
+    self.epoch_loop.run(self._data_fetcher)
+  File "/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/pytorch_lightning/loops/training_epoch_loop.py", line 133, in run
+    self.advance(data_fetcher)
+  File "/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/pytorch_lightning/loops/training_epoch_loop.py", line 218, in advance
+    batch_output = self.automatic_optimization.run(trainer.optimizers[0], kwargs)
+  File "/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 185, in run
+    self._optimizer_step(kwargs.get("batch_idx", 0), closure)
+  File "/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 260, in _optimizer_step
+    call._call_lightning_module_hook(
+  File "/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/pytorch_lightning/trainer/call.py", line 144, in _call_lightning_module_hook
+    output = fn(*args, **kwargs)
+  File "/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/pytorch_lightning/core/module.py", line 1256, in optimizer_step
+    optimizer.step(closure=optimizer_closure)
+  File "/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/pytorch_lightning/core/optimizer.py", line 155, in step
+    step_output = self._strategy.optimizer_step(self._optimizer, closure, **kwargs)
+  File "/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/pytorch_lightning/strategies/strategy.py", line 225, in optimizer_step
+    return self.precision_plugin.optimizer_step(optimizer, model=model, closure=closure, **kwargs)
+  File "/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/pytorch_lightning/plugins/precision/precision_plugin.py", line 114, in optimizer_step
+    return optimizer.step(closure=closure, **kwargs)
+  File "/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/torch/optim/optimizer.py", line 493, in wrapper
+    out = func(*args, **kwargs)
+  File "/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/torch/optim/optimizer.py", line 91, in _use_grad
+    ret = func(self, *args, **kwargs)
+  File "/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/torch/optim/adam.py", line 223, in step
+    loss = closure()
+  File "/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/pytorch_lightning/plugins/precision/precision_plugin.py", line 101, in _wrap_closure
+    closure_result = closure()
+  File "/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 140, in __call__
+    self._result = self.closure(*args, **kwargs)
+  File "/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 126, in closure
+    step_output = self._step_fn()
+  File "/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 307, in _training_step
+    training_step_output = call._call_strategy_hook(trainer, "training_step", *kwargs.values())
+  File "/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/pytorch_lightning/trainer/call.py", line 291, in _call_strategy_hook
+    output = fn(*args, **kwargs)
+  File "/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/pytorch_lightning/strategies/strategy.py", line 367, in training_step
+    return self.model.training_step(*args, **kwargs)
+  File "/work/bose_lab/Jamie/Summer/models/THItoGene-Fork/vis_model.py", line 211, in training_step
+    pred = self(patch, center, adj)
+  File "/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/work/bose_lab/Jamie/Summer/models/THItoGene-Fork/vis_model.py", line 202, in forward
+    x = self.vit(x)
+  File "/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/work/bose_lab/Jamie/Summer/models/THItoGene-Fork/transformer.py", line 93, in forward
+    x = self.transformer(x)
+  File "/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/work/bose_lab/Jamie/Summer/models/THItoGene-Fork/transformer.py", line 79, in forward
+    x = attn(x) + x
+  File "/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/work/bose_lab/Jamie/Summer/models/THItoGene-Fork/transformer.py", line 16, in forward
+    return self.fn(self.norm(x), **kwargs)
+  File "/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/work/bose_lab/Jamie/Summer/models/THItoGene-Fork/transformer.py", line 57, in forward
+    dots = einsum('b h i d, b h j d -> b h i j', q, k) * self.scale
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 31.70 GiB. GPU 0 has a total capacity of 79.25 GiB of which 17.52 GiB is free. Including non-PyTorch memory, this process has 61.73 GiB memory in use. Of the allocated memory 61.05 GiB is allocated by PyTorch, and 180.67 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Epoch 0:  48%|████▊     | 205/427 [04:29<04:51,  1.31s/it, v_num=4, train_loss=0.920]

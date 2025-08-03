@@ -16,6 +16,8 @@ def train(test_sample_ID=0, vit_dataset=ViT_HEST1K, epochs=300, modelsave_addres
     if dataset_name == "hest1k":
         if gene_list == "3CA":
             n_genes = 2977
+        elif gene_list == "Hallmark":
+            n_genes = 4376
         else:
             n_genes = 0
         tagname = gene_list + '_' + dataset_name + '_' + str(n_genes)
@@ -37,11 +39,11 @@ def train(test_sample_ID=0, vit_dataset=ViT_HEST1K, epochs=300, modelsave_addres
                          name="my_test_log_" + tagname + '_' + str(test_sample_ID))
     trainer = pl.Trainer(accelerator="gpu", devices=[0], max_epochs=epochs,
                          logger=mylogger)
-    train_loader = DataLoader(dataset, batch_size=1, num_workers=0, shuffle=True)
+    train_loader = DataLoader(dataset, batch_size=1, num_workers=4, shuffle=True)
 
     trainer.fit(model, train_loader)
 
-    test_loader = DataLoader(dataset_test, batch_size=1, num_workers=0)
+    test_loader = DataLoader(dataset_test, batch_size=1, num_workers=4)
 
     pred, gt = trainer.predict(model=model, dataloaders=test_loader)[0]
     R, p_val = get_R(pred, gt)
@@ -52,7 +54,7 @@ def train(test_sample_ID=0, vit_dataset=ViT_HEST1K, epochs=300, modelsave_addres
     trainer.save_checkpoint(modelsave_address+"/"+"last_train_"+tagname+'_'+str(test_sample_ID)+".ckpt")
 
 
-def test(test_sample_ID, vit_dataset, model_address, dataset_name, gene_list = "3CA"):
+def test(test_sample_ID=0, vit_dataset=ViT_HEST1K, model_address="model", dataset_name="hest1k", gene_list = "3CA"):
     if dataset_name == "her2st":
         tagname = "-htg_her2st_785_32_cv"
         g = list(np.load('./data/her_hvg_cut_1000.npy', allow_pickle=True))
@@ -64,12 +66,16 @@ def test(test_sample_ID, vit_dataset, model_address, dataset_name, gene_list = "
     elif dataset_name == "hest1k":
         if gene_list == "3CA":
             n_genes = 2977
+        elif gene_list == "Hallmark":
+            n_genes = 4376
         else:
             n_genes = 0
         tagname = gene_list + '_' + dataset_name + '_' + str(n_genes)
         dataset = ViT_HEST1K(mode='val', gene_list = gene_list)
         g = dataset.get_gene_names()
-        model = THItoGene.load_from_checkpoint(model_address+"/THItoGene_" + tagname + "_" + str(test_sample_ID) + ".ckpt", n_genes = n_genes, learning_rate = 1e-5, route_dim = 64, caps =20, heads=[16, 8], n_layers = 4)
+        # model = THItoGene.load_from_checkpoint(model_address+"/THItoGene_" + tagname + "_" + str(test_sample_ID) + ".ckpt", n_genes = n_genes, learning_rate = 1e-5, route_dim = 64, caps =20, heads=[16, 8], n_layers = 4)
+        model = THItoGene.load_from_checkpoint(model_address+"/THItoGene_her2st_" + str(test_sample_ID) + ".ckpt", n_genes = n_genes, learning_rate = 1e-5, route_dim = 64, caps =20, heads=[16, 8], n_layers = 4)
+        
     else:
         tagname = "-htg_skin_12_cv"
         g = list(np.load('/home/user/jiayuran/code/cond/THItoGene/data/skin_hvg_cut_1000.npy', allow_pickle=True))
