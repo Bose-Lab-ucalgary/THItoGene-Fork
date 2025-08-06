@@ -5,6 +5,7 @@ import random
 import argparse
 import numpy as np
 import torch
+import time
 
 import pytorch_lightning as pl
 from pytorch_lightning.loggers import CSVLogger
@@ -34,8 +35,8 @@ set_all_seeds(42)
 
 
 def train(test_sample_ID=0, vit_dataset=ViT_HEST1K, epochs=300, modelsave_address="model", 
-          dataset_name="hest1k", gene_list="3CA", num_workers=16, gpus=1, strategy=None, 
-          learning_rate=1e-5, batch_size=1, patience=20):
+          dataset_name="hest1k", gene_list="3CA", num_workers=8, gpus=1, strategy=None, 
+          learning_rate=1e-5, batch_size=1, patience=20, acc_grad_batches=4):
     
     # Get number of genes from config
     n_genes = GENE_LISTS[gene_list]["n_genes"]
@@ -49,22 +50,22 @@ def train(test_sample_ID=0, vit_dataset=ViT_HEST1K, epochs=300, modelsave_addres
     dataset_test = vit_dataset(mode='test', gene_list=gene_list)
     
     # Create data loaders
-    train_loader = DataLoader(dataset_train, batch_size=batch_size, num_workers=num_workers, shuffle=True)
-    val_loader = DataLoader(dataset_val, batch_size=batch_size, num_workers=num_workers, shuffle=False)
-    test_loader = DataLoader(dataset_test, batch_size=batch_size, num_workers=num_workers, shuffle=False)
-    
+    train_loader = DataLoader(dataset_train, batch_size=batch_size, num_workers=num_workers, shuffle=True, pin_memory=True, persistent_workers=True)
+    val_loader = DataLoader(dataset_val, batch_size=batch_size, num_workers=num_workers, shuffle=False, pin_memory=True, persistent_workers=True)
+    test_loader = DataLoader(dataset_test, batch_size=batch_size, num_workers=num_workers, shuffle=False, pin_memory=True, persistent_workers=True)
+
     # Setup callbacks
     checkpoint_callback = ModelCheckpoint(
         dirpath=modelsave_address,
-        filename=f"best_model_{tagname}_{test_sample_ID}" + "_{epoch:02d}_{val_loss:.2f}",
-        monitor='val_loss',
+        filename=f"best_model_{tagname}_{test_sample_ID}" + "_{epoch:02d}_{valid_loss:.2f}",
+        monitor='valid_loss',
         mode='min',
         save_top_k=3,
         save_last=True
     )
     
     early_stopping = EarlyStopping(
-        monitor='val_loss',
+        monitor='valid_loss',
         patience=patience,
         mode='min',
         verbose=True
@@ -75,14 +76,20 @@ def train(test_sample_ID=0, vit_dataset=ViT_HEST1K, epochs=300, modelsave_addres
                          name="my_test_log_" + tagname + '_' + str(test_sample_ID))
     
     memory_monitor = MemoryMonitorCallback()
-    
+    batch_memory_cleanup = ClearCacheCallback()
+    epoch_timer = EpochTimerCallback()
+
     # Setup trainer with configurable GPU settings
     trainer_kwargs = {
         'max_epochs': epochs,
         'logger': mylogger,
-        'callbacks': [checkpoint_callback, early_stopping, memory_monitor],
+        'callbacks': [checkpoint_callback, early_stopping, memory_monitor, batch_memory_cleanup, epoch_timer],
+        'enable_progress_bar': False,
         'check_val_every_n_epoch': 1,
-        'log_every_n_steps': 10
+        'log_every_n_steps': 10,
+        'accumulate_grad_batches': acc_grad_batches,
+        'gradient_clip_val': 1.0,
+        'precision': 16,
     }
     
     # Configure accelerator and devices based on GPU count
@@ -223,6 +230,22 @@ class MemoryMonitorCallback(Callback):
             print("\n[MemoryMonitor] CUDA memory summary after epoch:")
             print(torch.cuda.memory_summary())
             torch.cuda.empty_cache()
+
+class EpochTimerCallback(Callback):
+    def __init__(self):
+        self.epoch_start_time = None
+    
+    def on_train_epoch_start(self, trainer, pl_module):
+        self.epoch_start_time = time.time()
+        print(f"\n[EpochTimer] Starting epoch {trainer.current_epoch}")
+    
+    def on_train_epoch_end(self, trainer, pl_module):
+        if self.epoch_start_time is not None:
+            epoch_duration = time.time() - self.epoch_start_time
+            minutes = int(epoch_duration // 60)
+            seconds = epoch_duration % 60
+            print(f"[EpochTimer] Epoch {trainer.current_epoch} completed in {minutes}m {seconds:.1f}s")
+            self.epoch_start_time = None
 
 
 def parse_args():
