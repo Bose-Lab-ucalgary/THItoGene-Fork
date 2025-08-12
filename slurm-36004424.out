@@ -1,0 +1,1810 @@
+/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/lightning_fabric/__init__.py:40: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/anndata/utils.py:434: FutureWarning: Importing read_csv from `anndata` is deprecated. Import anndata.io.read_csv instead.
+  warnings.warn(msg, FutureWarning)
+/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/anndata/utils.py:434: FutureWarning: Importing read_text from `anndata` is deprecated. Import anndata.io.read_text instead.
+  warnings.warn(msg, FutureWarning)
+/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/anndata/utils.py:434: FutureWarning: Importing read_excel from `anndata` is deprecated. Import anndata.io.read_excel instead.
+  warnings.warn(msg, FutureWarning)
+/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/anndata/utils.py:434: FutureWarning: Importing read_mtx from `anndata` is deprecated. Import anndata.io.read_mtx instead.
+  warnings.warn(msg, FutureWarning)
+/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/anndata/utils.py:434: FutureWarning: Importing read_loom from `anndata` is deprecated. Import anndata.io.read_loom instead.
+  warnings.warn(msg, FutureWarning)
+/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/anndata/utils.py:434: FutureWarning: Importing read_hdf from `anndata` is deprecated. Import anndata.io.read_hdf instead.
+  warnings.warn(msg, FutureWarning)
+/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/anndata/utils.py:434: FutureWarning: Importing read_umi_tools from `anndata` is deprecated. Import anndata.io.read_umi_tools instead.
+  warnings.warn(msg, FutureWarning)
+Testing single model validation...
+Loading model with 785 genes...
+✓ Model loaded
+Creating dataset...
+Looking for HEST1K data in: ../../data/HERST_preprocess/HER2ST/test
+Checking sample NCBI883 for cancer state...
+Sample NCBI883 meta: dataset_title              Image-based spatial transcriptomics identifies...
+image_filename                                                   NCBI883.tif
+organ                                                                   Lung
+disease_state                                                        Healthy
+oncotree_code                                                            NaN
+species                                                         Homo sapiens
+patient                                                           Patient 28
+st_technology                                                         Xenium
+data_publication_date                                              23-Dec-23
+license                                                                  NaN
+study_link                 https://www.biorxiv.org/content/10.1101/2023.1...
+download_page_link1        https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi...
+inter_spot_dist                                                          NaN
+spot_diameter                                                            NaN
+spots_under_tissue                                                      1277
+preservation_method                                                     FFPE
+nb_genes                                                                 541
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                                0.2125
+pixel_size_um_estimated                                               0.2125
+magnification                                                            40x
+fullres_px_width                                                       17145
+fullres_px_height                                                      16597
+tissue                                                                  Lung
+disease_comment                                                      Control
+subseries                                                            THD0011
+hest_version_added                                                    v1_1_0
+Name: NCBI883, dtype: object
+Checking sample NCBI571 for cancer state...
+Sample NCBI571 meta: dataset_title              Schwann Cells Shape Tumor Cells and Cancer-Ass...
+image_filename                                                   NCBI571.tif
+organ                                                               Pancreas
+disease_state                                                         Cancer
+oncotree_code                                                           PAAD
+species                                                         Homo sapiens
+patient                                                                  NaN
+st_technology                                                         Visium
+data_publication_date                                              30-May-23
+license                                                                  NaN
+study_link                 https://www.nature.com/articles/s41467-023-403...
+download_page_link1                                                         
+inter_spot_dist                                                        100.0
+spot_diameter                                                           55.0
+spots_under_tissue                                                      2498
+preservation_method                                             Fresh Frozen
+nb_genes                                                               20615
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                              0.000549
+pixel_size_um_estimated                                             0.546779
+magnification                                                            20x
+fullres_px_width                                                       14592
+fullres_px_height                                                      14592
+tissue                                                              Pancreas
+disease_comment                                                          NaN
+subseries                                                          ST_PDAC-2
+hest_version_added                                                    v1_0_0
+Name: NCBI571, dtype: object
+Checking sample TENX152 for cancer state...
+Sample TENX152 meta: dataset_title              Characterization of immune cell populations in...
+image_filename                                                   TENX152.tif
+organ                                                                  Bowel
+disease_state                                                         Cancer
+oncotree_code                                                           COAD
+species                                                         Homo sapiens
+patient                                                            Patient 1
+st_technology                                                         Visium
+data_publication_date                                                7/11/24
+license                                         Creative Commons Attribution
+study_link                 https://www.biorxiv.org/content/10.1101/2024.0...
+download_page_link1        https://www.10xgenomics.com/products/visium-hd...
+inter_spot_dist                                                        100.0
+spot_diameter                                                           55.0
+spots_under_tissue                                                      4269
+preservation_method                                                     FFPE
+nb_genes                                                               18085
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                              0.264583
+pixel_size_um_estimated                                             0.273724
+magnification                                                            40x
+fullres_px_width                                                       76190
+fullres_px_height                                                      49099
+tissue                                                                 Colon
+disease_comment                                                          NaN
+subseries                                 Visium CytAssist v2, Sample P2 CRC
+hest_version_added                                                    v1_1_0
+Name: TENX152, dtype: object
+Checking sample MEND139 for cancer state...
+Sample MEND139 meta: dataset_title              Spatially resolved clonal copy number alterati...
+image_filename                                                   MEND139.tif
+organ                                                               Prostate
+disease_state                                                         Cancer
+oncotree_code                                                            NaN
+species                                                         Homo sapiens
+patient                                                            patient 2
+st_technology                                                         Visium
+data_publication_date                                              25-Mar-24
+license                                                         CC BY NC 3.0
+study_link                 https://www.nature.com/articles/s41586-022-050...
+download_page_link1          https://data.mendeley.com/datasets/svw96g68dv/5
+inter_spot_dist                                                        100.0
+spot_diameter                                                           55.0
+spots_under_tissue                                                      3749
+preservation_method                                             Fresh Frozen
+nb_genes                                                               33538
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                                   NaN
+pixel_size_um_estimated                                              0.34177
+magnification                                                            40x
+fullres_px_width                                                       24000
+fullres_px_height                                                      24258
+tissue                                                              Prostate
+disease_comment            Gleason 4+3 ISUP grade group 4 , Prostatic Aci...
+subseries                                                     patient_2_V2_2
+hest_version_added                                                    v1_0_0
+Name: MEND139, dtype: object
+Checking sample SPA120 for cancer state...
+Sample SPA120 meta: dataset_title              Spatial deconvolution of HER2-positive breast ...
+image_filename                                                    SPA120.tif
+organ                                                                 Breast
+disease_state                                                         Cancer
+oncotree_code                                                            IDC
+species                                                         Homo sapiens
+patient                                                            Patient H
+st_technology                                        Spatial Transcriptomics
+data_publication_date                                              16-Sep-21
+license                       Creative Commons Attribution 4.0 International
+study_link                         https://pubmed.ncbi.nlm.nih.gov/34650042/
+download_page_link1                       https://zenodo.org/records/4751624
+inter_spot_dist                                                        200.0
+spot_diameter                                                          100.0
+spots_under_tissue                                                       603
+preservation_method                                             Fresh Frozen
+nb_genes                                                               14907
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                                   NaN
+pixel_size_um_estimated                                             0.688515
+magnification                                                            20x
+fullres_px_width                                                        9314
+fullres_px_height                                                       9873
+tissue                                                                Breast
+disease_comment                                  HER2-positive breast cancer
+subseries                                                                 H2
+hest_version_added                                                    v1_0_0
+Name: SPA120, dtype: object
+Checking sample NCBI534 for cancer state...
+Sample NCBI534 meta: dataset_title              Genome-wide Spatial Expression Profiling in Fo...
+image_filename                                                   NCBI534.tif
+organ                                                                   Lung
+disease_state                                                        Healthy
+oncotree_code                                                            NaN
+species                                                         Homo sapiens
+patient                                                                  NaN
+st_technology                                                         Visium
+data_publication_date                                              15-Oct-21
+license                                                                CC BY
+study_link                         https://pubmed.ncbi.nlm.nih.gov/36776149/
+download_page_link1                                                         
+inter_spot_dist                                                        100.0
+spot_diameter                                                           55.0
+spots_under_tissue                                                       533
+preservation_method                                                      PFA
+nb_genes                                                               33538
+treatment_comment          Human embryonic stem cells were grown on vitro...
+pixel_size_um_embedded                                                   NaN
+pixel_size_um_estimated                                             0.172512
+magnification                                                            40x
+fullres_px_width                                                       47616
+fullres_px_height                                                      48128
+tissue                                                                  Lung
+disease_comment                                                          NaN
+subseries                                          PFA fixed lung_organoid_4
+hest_version_added                                                    v1_0_0
+Name: NCBI534, dtype: object
+Checking sample NCBI857 for cancer state...
+Sample NCBI857 meta: dataset_title              Image-based spatial transcriptomics identifies...
+image_filename                                                   NCBI857.tif
+organ                                                                   Lung
+disease_state                                                       Diseased
+oncotree_code                                                            NaN
+species                                                         Homo sapiens
+patient                                                           Patient 25
+st_technology                                                         Xenium
+data_publication_date                                              23-Dec-23
+license                                                                  NaN
+study_link                 https://www.biorxiv.org/content/10.1101/2023.1...
+download_page_link1        https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi...
+inter_spot_dist                                                          NaN
+spot_diameter                                                            NaN
+spots_under_tissue                                                      1767
+preservation_method                                                     FFPE
+nb_genes                                                                 541
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                                0.2125
+pixel_size_um_estimated                                               0.2125
+magnification                                                            40x
+fullres_px_width                                                       19964
+fullres_px_height                                                      24815
+tissue                                                                  Lung
+disease_comment                                    Sarcoidosis More fibrotic
+subseries                                                          VUILD96MF
+hest_version_added                                                    v1_1_0
+Name: NCBI857, dtype: object
+Checking sample MEND149 for cancer state...
+Sample MEND149 meta: dataset_title              Spatially resolved clonal copy number alterati...
+image_filename                                                   MEND149.tif
+organ                                                               Prostate
+disease_state                                                         Cancer
+oncotree_code                                                            NaN
+species                                                         Homo sapiens
+patient                                                            patient 2
+st_technology                                                         Visium
+data_publication_date                                              25-Mar-24
+license                                                         CC BY NC 3.0
+study_link                 https://www.nature.com/articles/s41586-022-050...
+download_page_link1          https://data.mendeley.com/datasets/svw96g68dv/5
+inter_spot_dist                                                        100.0
+spot_diameter                                                           55.0
+spots_under_tissue                                                      1851
+preservation_method                                             Fresh Frozen
+nb_genes                                                               33538
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                                   NaN
+pixel_size_um_estimated                                             0.348612
+magnification                                                            40x
+fullres_px_width                                                       24000
+fullres_px_height                                                      23242
+tissue                                                              Prostate
+disease_comment            Gleason 4+3 ISUP grade group 4 , Prostatic Aci...
+subseries                                                     patient_2_H3_4
+hest_version_added                                                    v1_0_0
+Name: MEND149, dtype: object
+Checking sample MEND14 for cancer state...
+Sample MEND14 meta: dataset_title              Prostate needle biopsies pre- and post-ADT: Co...
+image_filename                                                    MEND14.tif
+organ                                                               Prostate
+disease_state                                                         Cancer
+oncotree_code                                                            NaN
+species                                                         Homo sapiens
+patient                                                                  NaN
+st_technology                                        Spatial Transcriptomics
+data_publication_date                                              20-Jul-22
+license                                                            CC BY 4.0
+study_link                 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9...
+download_page_link1          https://data.mendeley.com/datasets/mdt8n2xgf4/1
+inter_spot_dist                                                        200.0
+spot_diameter                                                          100.0
+spots_under_tissue                                                       161
+preservation_method                                             Fresh Frozen
+nb_genes                                                               29677
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                                   NaN
+pixel_size_um_estimated                                             0.278798
+magnification                                                            40x
+fullres_px_width                                                       32768
+fullres_px_height                                                      28672
+tissue                                                              prostate
+disease_comment            Local advanced PCa with initially bone metastases
+subseries                                     Patient2_Biopsy2_rep1_Chip2_C2
+hest_version_added                                                    v1_0_0
+Name: MEND14, dtype: object
+Checking sample NCBI639 for cancer state...
+Sample NCBI639 meta: dataset_title              Spatial transcriptomics reveal unnresolved wou...
+image_filename                                                   NCBI639.tif
+organ                                                                  Brain
+disease_state                                                         Cancer
+oncotree_code                                                            EPM
+species                                                         Homo sapiens
+patient                                                          Patient 727
+st_technology                                                         Visium
+data_publication_date                                              13-Oct-22
+license                                                                  NaN
+study_link                 https://academic.oup.com/neuro-oncology/articl...
+download_page_link1                                                         
+inter_spot_dist                                                        100.0
+spot_diameter                                                           55.0
+spots_under_tissue                                                       979
+preservation_method                                                      NaN
+nb_genes                                                               36601
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                              0.000616
+pixel_size_um_estimated                                             0.614916
+magnification                                                            20x
+fullres_px_width                                                       12838
+fullres_px_height                                                      13152
+tissue                                                                 Brain
+disease_comment                                                          PFA
+subseries                                      surgically resected tumor 727
+hest_version_added                                                    v1_0_0
+Name: NCBI639, dtype: object
+Checking sample MISC18 for cancer state...
+Sample MISC18 meta: dataset_title              A spatially resolved atlas of the human lung c...
+image_filename                                                    MISC18.tif
+organ                                                                   Lung
+disease_state                                                        Treated
+oncotree_code                                                            NaN
+species                                                         Homo sapiens
+patient                                                                     
+st_technology                                                         Visium
+data_publication_date                                              21-Dec-22
+license                    Creative Commons Attribution 4.0 International...
+study_link                 https://www.nature.com/articles/s41588-022-012...
+download_page_link1        https://explore.data.humancellatlas.org/projec...
+inter_spot_dist                                                        100.0
+spot_diameter                                                           55.0
+spots_under_tissue                                                      2081
+preservation_method                                             Fresh Frozen
+nb_genes                                                               33538
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                                   NaN
+pixel_size_um_estimated                                             0.441608
+magnification                                                            40x
+fullres_px_width                                                       35112
+fullres_px_height                                                      19720
+tissue                                                            Parenchyma
+disease_comment                                                          NaN
+subseries                                                  WSA_LngSP10193347
+hest_version_added                                                    v1_0_0
+Name: MISC18, dtype: object
+Checking sample MEND11 for cancer state...
+Sample MEND11 meta: dataset_title              Prostate needle biopsies pre- and post-ADT: Co...
+image_filename                                                    MEND11.tif
+organ                                                               Prostate
+disease_state                                                         Cancer
+oncotree_code                                                            NaN
+species                                                         Homo sapiens
+patient                                                                  NaN
+st_technology                                        Spatial Transcriptomics
+data_publication_date                                              20-Jul-22
+license                                                            CC BY 4.0
+study_link                 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9...
+download_page_link1          https://data.mendeley.com/datasets/mdt8n2xgf4/1
+inter_spot_dist                                                        200.0
+spot_diameter                                                          100.0
+spots_under_tissue                                                       216
+preservation_method                                             Fresh Frozen
+nb_genes                                                               22232
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                                   NaN
+pixel_size_um_estimated                                             0.270248
+magnification                                                            40x
+fullres_px_width                                                       32768
+fullres_px_height                                                      29184
+tissue                                                              prostate
+disease_comment            Local advanced PCa with initially bone metastases
+subseries                                     Patient2_Biopsy3_rep2_Chip3_E1
+hest_version_added                                                    v1_0_0
+Name: MEND11, dtype: object
+Checking sample MISC16 for cancer state...
+Sample MISC16 meta: dataset_title              A spatially resolved atlas of the human lung c...
+image_filename                                                    MISC16.tif
+organ                                                                   Lung
+disease_state                                                        Treated
+oncotree_code                                                            NaN
+species                                                         Homo sapiens
+patient                                                                     
+st_technology                                                         Visium
+data_publication_date                                              21-Dec-22
+license                    Creative Commons Attribution 4.0 International...
+study_link                 https://www.nature.com/articles/s41588-022-012...
+download_page_link1        https://explore.data.humancellatlas.org/projec...
+inter_spot_dist                                                        100.0
+spot_diameter                                                           55.0
+spots_under_tissue                                                      3154
+preservation_method                                                     FFPE
+nb_genes                                                               17922
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                                   NaN
+pixel_size_um_estimated                                             0.455151
+magnification                                                            40x
+fullres_px_width                                                       33264
+fullres_px_height                                                      18688
+tissue                                                               Bronchi
+disease_comment                                                          NaN
+subseries                                                  WSA_LngSP10972072
+hest_version_added                                                    v1_0_0
+Name: MISC16, dtype: object
+Checking sample MISC52 for cancer state...
+Sample MISC52 meta: dataset_title                       COLON MAP: Colon Molecular Atlas Project
+image_filename                                                    MISC52.tif
+organ                                                                  Bowel
+disease_state                                                          Tumor
+oncotree_code                                                            NaN
+species                                                         Homo sapiens
+patient                                                                     
+st_technology                                                         Visium
+data_publication_date                                        December 7 2023
+license                                                      CC BY-NC-ND 4.0
+study_link                 https://www.cell.com/cell/fulltext/S0092-8674(...
+download_page_link1        https://humantumoratlas.org/explore?selectedFi...
+inter_spot_dist                                                        100.0
+spot_diameter                                                           55.0
+spots_under_tissue                                                       229
+preservation_method                                                     FFPE
+nb_genes                                                               19284
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                                   1.0
+pixel_size_um_estimated                                             0.276231
+magnification                                                            40x
+fullres_px_width                                                       29611
+fullres_px_height                                                      30168
+tissue                                                                 Colon
+disease_comment                                         Atypia - hyperplasia
+subseries                                                          8270_AS_5
+hest_version_added                                                    v1_1_0
+Name: MISC52, dtype: object
+Checking sample SPA116 for cancer state...
+Sample SPA116 meta: dataset_title              Integrating spatial gene expression and breast...
+image_filename                                                    SPA116.tif
+organ                                                                 Breast
+disease_state                                                         Cancer
+oncotree_code                                                            IDC
+species                                                         Homo sapiens
+patient                                                              BC23287
+st_technology                                        Spatial Transcriptomics
+data_publication_date                                              30-Nov-21
+license                                                            CC BY 4.0
+study_link                 https://www.science.org/doi/10.1126/science.aa...
+download_page_link1          https://data.mendeley.com/datasets/29ntw7sh4r/5
+inter_spot_dist                                                        200.0
+spot_diameter                                                          100.0
+spots_under_tissue                                                       357
+preservation_method                                                      NaN
+nb_genes                                                               16826
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                                   NaN
+pixel_size_um_estimated                                              0.68667
+magnification                                                            20x
+fullres_px_width                                                        9297
+fullres_px_height                                                       9855
+tissue                                                                Breast
+disease_comment                                                 HER2_luminal
+subseries                                                         BC23287_D1
+hest_version_added                                                    v1_0_0
+Name: SPA116, dtype: object
+Checking sample SPA129 for cancer state...
+Sample SPA129 meta: dataset_title              Spatial deconvolution of HER2-positive breast ...
+image_filename                                                    SPA129.tif
+organ                                                                 Breast
+disease_state                                                         Cancer
+oncotree_code                                                            IDC
+species                                                         Homo sapiens
+patient                                                            Patient E
+st_technology                                        Spatial Transcriptomics
+data_publication_date                                              16-Sep-21
+license                       Creative Commons Attribution 4.0 International
+study_link                         https://pubmed.ncbi.nlm.nih.gov/34650042/
+download_page_link1                       https://zenodo.org/records/4751624
+inter_spot_dist                                                        200.0
+spot_diameter                                                          100.0
+spots_under_tissue                                                       572
+preservation_method                                             Fresh Frozen
+nb_genes                                                               15167
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                                   NaN
+pixel_size_um_estimated                                             0.688464
+magnification                                                            20x
+fullres_px_width                                                        9308
+fullres_px_height                                                       9862
+tissue                                                                Breast
+disease_comment                                  HER2-positive breast cancer
+subseries                                                                 E2
+hest_version_added                                                    v1_0_0
+Name: SPA129, dtype: object
+Checking sample MISC69 for cancer state...
+Sample MISC69 meta: dataset_title                       COLON MAP: Colon Molecular Atlas Project
+image_filename                                                    MISC69.tif
+organ                                                                  Bowel
+disease_state                                                         Cancer
+oncotree_code                                                           COAD
+species                                                         Homo sapiens
+patient                                                                     
+st_technology                                                         Visium
+data_publication_date                                        December 7 2023
+license                                                      CC BY-NC-ND 4.0
+study_link                 https://www.cell.com/cell/fulltext/S0092-8674(...
+download_page_link1        https://humantumoratlas.org/explore?selectedFi...
+inter_spot_dist                                                        100.0
+spot_diameter                                                           55.0
+spots_under_tissue                                                      3634
+preservation_method                                                     FFPE
+nb_genes                                                               19263
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                                   1.0
+pixel_size_um_estimated                                             0.276054
+magnification                                                            40x
+fullres_px_width                                                       29487
+fullres_px_height                                                      41562
+tissue                                                                 Colon
+disease_comment                                                      Primary
+subseries                                                          7003_AS_1
+hest_version_added                                                    v1_1_0
+Name: MISC69, dtype: object
+Checking sample SPA54 for cancer state...
+Sample SPA54 meta: dataset_title              Integrating spatial gene expression and breast...
+image_filename                                                     SPA54.tif
+organ                                                                 Breast
+disease_state                                                         Cancer
+oncotree_code                                                            IDC
+species                                                         Homo sapiens
+patient                                                              BC23377
+st_technology                                        Spatial Transcriptomics
+data_publication_date                                              30-Nov-21
+license                                                            CC BY 4.0
+study_link                 https://www.science.org/doi/10.1126/science.aa...
+download_page_link1          https://data.mendeley.com/datasets/29ntw7sh4r/5
+inter_spot_dist                                                        200.0
+spot_diameter                                                          100.0
+spots_under_tissue                                                       601
+preservation_method                                                      NaN
+nb_genes                                                               17939
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                                   NaN
+pixel_size_um_estimated                                             0.685319
+magnification                                                            20x
+fullres_px_width                                                        9308
+fullres_px_height                                                       9917
+tissue                                                                Breast
+disease_comment                                                         TNBC
+subseries                                                         BC23377_D1
+hest_version_added                                                    v1_0_0
+Name: SPA54, dtype: object
+Checking sample INT17 for cancer state...
+Sample INT17 meta: dataset_title              Tertiary lymphoid structures generate and prop...
+image_filename                                                     INT17.tif
+organ                                                                 Kidney
+disease_state                                                         Cancer
+oncotree_code                                                         SCCRCC
+species                                                         Homo sapiens
+patient                                                            Patient 8
+st_technology                                                         Visium
+data_publication_date                                                 3/3/22
+license                                                             Internal
+study_link                         https://pubmed.ncbi.nlm.nih.gov/35231421/
+download_page_link1                                          None (internal)
+inter_spot_dist                                                        100.0
+spot_diameter                                                           55.0
+spots_under_tissue                                                      3585
+preservation_method                                                      NaN
+nb_genes                                                               17943
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                              0.457666
+pixel_size_um_estimated                                              0.45753
+magnification                                                            40x
+fullres_px_width                                                       17482
+fullres_px_height                                                      16885
+tissue                                                                Kidney
+disease_comment                                                          NaN
+subseries                                              ccRCC tumor ffpe_c_34
+hest_version_added                                                    v1_0_0
+Name: INT17, dtype: object
+Checking sample TENX142 for cancer state...
+Sample TENX142 meta: dataset_title              FFPE Human Ovarian Cancer Data with Human Immu...
+image_filename                                                   TENX142.tif
+organ                                                                  Ovary
+disease_state                                                         Cancer
+oncotree_code                                                          HGSOC
+species                                                         Homo sapiens
+patient                                                                  NaN
+st_technology                                                         Xenium
+data_publication_date                                                5/15/24
+license                                         Creative Commons Attribution
+study_link                                                               NaN
+download_page_link1        https://www.10xgenomics.com/datasets/ffpe-huma...
+inter_spot_dist                                                          NaN
+spot_diameter                                                            NaN
+spots_under_tissue                                                      3743
+preservation_method                                                     FFPE
+nb_genes                                                                 541
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                              0.273769
+pixel_size_um_estimated                                             0.273706
+magnification                                                            40x
+fullres_px_width                                                       21806
+fullres_px_height                                                      37330
+tissue                                                                 Ovary
+disease_comment                  Ovary Serous Carcinoma; Stage II-A; Grade 3
+subseries                                                                NaN
+hest_version_added                                                    v1_0_0
+Name: TENX142, dtype: object
+Checking sample MISC4 for cancer state...
+Sample MISC4 meta: dataset_title                                                    spatialLIBD
+image_filename                                                     MISC4.tif
+organ                                                                  Brain
+disease_state                                                        Healthy
+oncotree_code                                                            NaN
+species                                                         Homo sapiens
+patient                                                                     
+st_technology                                                         Visium
+data_publication_date                                                    NaN
+license                                                                  NaN
+study_link                 https://www.nature.com/articles/s41593-020-007...
+download_page_link1        https://github.com/LieberInstitute/spatialLIBD...
+inter_spot_dist                                                        100.0
+spot_diameter                                                           55.0
+spots_under_tissue                                                      3639
+preservation_method                                             Fresh Frozen
+nb_genes                                                               33538
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                                   NaN
+pixel_size_um_estimated                                             0.726109
+magnification                                                            20x
+fullres_px_width                                                       13332
+fullres_px_height                                                      13332
+tissue                                        dorsolateral prefrontal cortex
+disease_comment                                                          NaN
+subseries                                                             151673
+hest_version_added                                                    v1_0_0
+Name: MISC4, dtype: object
+Checking sample NCBI673 for cancer state...
+Sample NCBI673 meta: dataset_title              Single-cell and spatial transcriptomics charac...
+image_filename                                                   NCBI673.tif
+organ                                                                  Liver
+disease_state                                                       Diseased
+oncotree_code                                                            NaN
+species                                                         Homo sapiens
+patient                                                                  NaN
+st_technology                                                         Visium
+data_publication_date                                               6-Oct-23
+license                                                                  NaN
+study_link                         https://pubmed.ncbi.nlm.nih.gov/38199298/
+download_page_link1                                                         
+inter_spot_dist                                                        100.0
+spot_diameter                                                           55.0
+spots_under_tissue                                                      4992
+preservation_method                                                      NaN
+nb_genes                                                               36601
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                              0.303776
+pixel_size_um_estimated                                             0.304102
+magnification                                                            40x
+fullres_px_width                                                       25507
+fullres_px_height                                                      26036
+tissue                                                                 Liver
+disease_comment                                                          PSC
+subseries                                                      C73_C1_VISIUM
+hest_version_added                                                    v1_0_0
+Name: NCBI673, dtype: object
+Checking sample INT12 for cancer state...
+Sample INT12 meta: dataset_title              Tertiary lymphoid structures generate and prop...
+image_filename                                                     INT12.tif
+organ                                                                 Kidney
+disease_state                                                         Cancer
+oncotree_code                                                         SCCRCC
+species                                                         Homo sapiens
+patient                                                           Patient 13
+st_technology                                                         Visium
+data_publication_date                                                 3/3/22
+license                                                             Internal
+study_link                         https://pubmed.ncbi.nlm.nih.gov/35231421/
+download_page_link1                                          None (internal)
+inter_spot_dist                                                        100.0
+spot_diameter                                                           55.0
+spots_under_tissue                                                      1451
+preservation_method                                                      NaN
+nb_genes                                                               36601
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                              0.457666
+pixel_size_um_estimated                                             0.457664
+magnification                                                            40x
+fullres_px_width                                                       19200
+fullres_px_height                                                      18944
+tissue                                                                Kidney
+disease_comment                                                          NaN
+subseries                                             ccRCC tumor frozen_a_1
+hest_version_added                                                    v1_0_0
+Name: INT12, dtype: object
+Checking sample SPA95 for cancer state...
+Sample SPA95 meta: dataset_title              Integrating spatial gene expression and breast...
+image_filename                                                     SPA95.tif
+organ                                                                 Breast
+disease_state                                                         Cancer
+oncotree_code                                                            IDC
+species                                                         Homo sapiens
+patient                                                              BC24044
+st_technology                                        Spatial Transcriptomics
+data_publication_date                                              30-Nov-21
+license                                                            CC BY 4.0
+study_link                 https://www.science.org/doi/10.1126/science.aa...
+download_page_link1          https://data.mendeley.com/datasets/29ntw7sh4r/5
+inter_spot_dist                                                        200.0
+spot_diameter                                                          100.0
+spots_under_tissue                                                       614
+preservation_method                                                      NaN
+nb_genes                                                               17653
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                                   NaN
+pixel_size_um_estimated                                             0.686924
+magnification                                                            20x
+fullres_px_width                                                        9301
+fullres_px_height                                                       9869
+tissue                                                                Breast
+disease_comment                                             HER2_non_luminal
+subseries                                                         BC24044_D2
+hest_version_added                                                    v1_0_0
+Name: SPA95, dtype: object
+Checking sample SPA101 for cancer state...
+Sample SPA101 meta: dataset_title              Integrating spatial gene expression and breast...
+image_filename                                                    SPA101.tif
+organ                                                                 Breast
+disease_state                                                         Cancer
+oncotree_code                                                            IDC
+species                                                         Homo sapiens
+patient                                                              BC23810
+st_technology                                        Spatial Transcriptomics
+data_publication_date                                              30-Nov-21
+license                                                            CC BY 4.0
+study_link                 https://www.science.org/doi/10.1126/science.aa...
+download_page_link1          https://data.mendeley.com/datasets/29ntw7sh4r/5
+inter_spot_dist                                                        200.0
+spot_diameter                                                          100.0
+spots_under_tissue                                                       691
+preservation_method                                                      NaN
+nb_genes                                                               17923
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                                   NaN
+pixel_size_um_estimated                                             0.702078
+magnification                                                            20x
+fullres_px_width                                                        9307
+fullres_px_height                                                       9855
+tissue                                                                Breast
+disease_comment                                             HER2_non_luminal
+subseries                                                         BC23810_D2
+hest_version_added                                                    v1_0_0
+Name: SPA101, dtype: object
+Checking sample TENX139 for cancer state...
+Sample TENX139 meta: dataset_title              FFPE Human Colorectal Cancer Data with Human I...
+image_filename                                                   TENX139.tif
+organ                                                                  Bowel
+disease_state                                                         Cancer
+oncotree_code                                                       COADREAD
+species                                                         Homo sapiens
+patient                                                                  NaN
+st_technology                                                         Xenium
+data_publication_date                                                5/15/24
+license                                         Creative Commons Attribution
+study_link                                                               NaN
+download_page_link1        https://www.10xgenomics.com/datasets/ffpe-huma...
+inter_spot_dist                                                          NaN
+spot_diameter                                                            NaN
+spots_under_tissue                                                      4167
+preservation_method                                                     FFPE
+nb_genes                                                                 541
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                              0.273773
+pixel_size_um_estimated                                             0.273741
+magnification                                                            40x
+fullres_px_width                                                       21507
+fullres_px_height                                                      40815
+tissue                                                                 Bowel
+disease_comment                    Colorectal Cancer Adenocarcinoma; Grade 2
+subseries                                                                NaN
+hest_version_added                                                    v1_0_0
+Name: TENX139, dtype: object
+Checking sample MEND40 for cancer state...
+Sample MEND40 meta: dataset_title                                  Human squamous cell carcinoma
+image_filename                                                    MEND40.tif
+organ                                                                   Skin
+disease_state                                                         Cancer
+oncotree_code                                                            NaN
+species                                                         Homo sapiens
+patient                                                            Patient 1
+st_technology                                                         Visium
+data_publication_date                                              20-Aug-21
+license                                                            CC BY 4.0
+study_link                 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7...
+download_page_link1          https://data.mendeley.com/datasets/2bh5fchcv6/1
+inter_spot_dist                                                        100.0
+spot_diameter                                                           55.0
+spots_under_tissue                                                      2793
+preservation_method                                                     FFPE
+nb_genes                                                               33538
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                                   NaN
+pixel_size_um_estimated                                             0.171939
+magnification                                                            40x
+fullres_px_width                                                       48640
+fullres_px_height                                                      47104
+tissue                                                                  skin
+disease_comment                                                          NaN
+subseries                                                      V10F24-015_A1
+hest_version_added                                                    v1_0_0
+Name: MEND40, dtype: object
+Checking sample SPA46 for cancer state...
+Sample SPA46 meta: dataset_title              A spatiotemporal organ-wide gene expression an...
+image_filename                                                     SPA46.tif
+organ                                                                  Heart
+disease_state                                                        Healthy
+oncotree_code                                                            NaN
+species                                                         Homo sapiens
+patient                                                                  NaN
+st_technology                                        Spatial Transcriptomics
+data_publication_date                                              16-Dec-19
+license                                                            CC BY 4.0
+study_link                 https://www.sciencedirect.com/science/article/...
+download_page_link1          https://data.mendeley.com/datasets/mbvhhf8m62/2
+inter_spot_dist                                                        200.0
+spot_diameter                                                          100.0
+spots_under_tissue                                                        69
+preservation_method                                              Snap Frozen
+nb_genes                                                               39739
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                                   NaN
+pixel_size_um_estimated                                             0.931017
+magnification                                                            20x
+fullres_px_width                                                        9830
+fullres_px_height                                                       8602
+tissue                                                                 Heart
+disease_comment                                   4.5-5 Post Conception Week
+subseries                                               ST_Sample_4.5-5PCW_3
+hest_version_added                                                    v1_0_0
+Name: SPA46, dtype: object
+Checking sample MISC72 for cancer state...
+Sample MISC72 meta: dataset_title                       COLON MAP: Colon Molecular Atlas Project
+image_filename                                                    MISC72.tif
+organ                                                                  Bowel
+disease_state                                                         Cancer
+oncotree_code                                                           COAD
+species                                                         Homo sapiens
+patient                                                                     
+st_technology                                                         Visium
+data_publication_date                                        December 7 2023
+license                                                      CC BY-NC-ND 4.0
+study_link                 https://www.cell.com/cell/fulltext/S0092-8674(...
+download_page_link1        https://humantumoratlas.org/explore?selectedFi...
+inter_spot_dist                                                        100.0
+spot_diameter                                                           55.0
+spots_under_tissue                                                      4369
+preservation_method                                                     FFPE
+nb_genes                                                               19310
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                                   1.0
+pixel_size_um_estimated                                             0.276277
+magnification                                                            40x
+fullres_px_width                                                       35672
+fullres_px_height                                                      31259
+tissue                                                                 Colon
+disease_comment                                      Not otherwise specified
+subseries                                                          6723_KL_2
+hest_version_added                                                    v1_1_0
+Name: MISC72, dtype: object
+Checking sample SPA88 for cancer state...
+Sample SPA88 meta: dataset_title              Integrating spatial gene expression and breast...
+image_filename                                                     SPA88.tif
+organ                                                                 Breast
+disease_state                                                         Cancer
+oncotree_code                                                            IDC
+species                                                         Homo sapiens
+patient                                                              BC23268
+st_technology                                        Spatial Transcriptomics
+data_publication_date                                              30-Nov-21
+license                                                            CC BY 4.0
+study_link                 https://www.science.org/doi/10.1126/science.aa...
+download_page_link1          https://data.mendeley.com/datasets/29ntw7sh4r/5
+inter_spot_dist                                                        200.0
+spot_diameter                                                          100.0
+spots_under_tissue                                                       498
+preservation_method                                                      NaN
+nb_genes                                                               17467
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                                   NaN
+pixel_size_um_estimated                                             0.685273
+magnification                                                            20x
+fullres_px_width                                                        9291
+fullres_px_height                                                       9908
+tissue                                                                Breast
+disease_comment                                                    Luminal_A
+subseries                                                         BC23268_C2
+hest_version_added                                                    v1_0_0
+Name: SPA88, dtype: object
+Checking sample MEND87 for cancer state...
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/pytorch_lightning/trainer/connectors/logger_connector/logger_connector.py:75: Starting from v1.9.0, `tensorboardX` has been removed as a dependency of the `pytorch_lightning` package, due to potential conflicts with other packages in the ML ecosystem. For this reason, `logger=True` will use `CSVLogger` as the default logger, unless the `tensorboard` or `tensorboardX` packages are found. Please `pip install lightning[extra]` or one of them to enable TensorBoard support by default
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+SLURM auto-requeueing enabled. Setting signal handlers.
+/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:441: The 'predict_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=15` in the `DataLoader` to improve performance.
+/home/jamie.macdonald2/software/miniforge3/envs/thitogene-env/lib/python3.10/site-packages/pytorch_lightning/utilities/data.py:104: Total length of `DataLoader` across ranks is zero. Please make sure this was your intention.
+Sample MEND87 meta: dataset_title              Spatially resolved transcriptomic profiling of...
+image_filename                                                    MEND87.tif
+organ                                                                   Lung
+disease_state                                                        Healthy
+oncotree_code                                                            NaN
+species                                                         Homo sapiens
+patient                                                                  NaN
+st_technology                                                         Visium
+data_publication_date                                              20-Dec-22
+license                                                            CC BY 4.0
+study_link                 https://www.nature.com/articles/s41467-023-360...
+download_page_link1          https://data.mendeley.com/datasets/4w6krnywhn/1
+inter_spot_dist                                                        100.0
+spot_diameter                                                           55.0
+spots_under_tissue                                                      1508
+preservation_method                                             Fresh Frozen
+nb_genes                                                               36601
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                                   NaN
+pixel_size_um_estimated                                             0.172199
+magnification                                                            40x
+fullres_px_width                                                       48640
+fullres_px_height                                                      46592
+tissue                                                                  lung
+disease_comment                                                          NaN
+subseries                                                      V10T03-286_D1
+hest_version_added                                                    v1_0_0
+Name: MEND87, dtype: object
+Checking sample NCBI690 for cancer state...
+Sample NCBI690 meta: dataset_title              A single-cell transcriptomic analysis of endom...
+image_filename                                                   NCBI690.tif
+organ                                                                 Uterus
+disease_state                                                       Diseased
+oncotree_code                                                            NaN
+species                                                         Homo sapiens
+patient                                                                  NaN
+st_technology                                                         Visium
+data_publication_date                                              30-Oct-22
+license                                                                  NaN
+study_link                 https://www.nature.com/articles/s41588-022-012...
+download_page_link1                                                         
+inter_spot_dist                                                        100.0
+spot_diameter                                                           55.0
+spots_under_tissue                                                      1960
+preservation_method                                                      NaN
+nb_genes                                                               36601
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                                   NaN
+pixel_size_um_estimated                                             0.503144
+magnification                                                            20x
+fullres_px_width                                                       16033
+fullres_px_height                                                      16243
+tissue                                                         Endometriosis
+disease_comment                                                Endometriosis
+subseries                                           BEME_355G, Endometriosis
+hest_version_added                                                    v1_0_0
+Name: NCBI690, dtype: object
+Checking sample SPA42 for cancer state...
+Sample SPA42 meta: dataset_title              A spatiotemporal organ-wide gene expression an...
+image_filename                                                     SPA42.tif
+organ                                                                  Heart
+disease_state                                                        Healthy
+oncotree_code                                                            NaN
+species                                                         Homo sapiens
+patient                                                                  NaN
+st_technology                                        Spatial Transcriptomics
+data_publication_date                                              16-Dec-19
+license                                                            CC BY 4.0
+study_link                 https://www.sciencedirect.com/science/article/...
+download_page_link1          https://data.mendeley.com/datasets/mbvhhf8m62/2
+inter_spot_dist                                                        200.0
+spot_diameter                                                          100.0
+spots_under_tissue                                                       159
+preservation_method                                              Snap Frozen
+nb_genes                                                               39739
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                                   NaN
+pixel_size_um_estimated                                             0.762088
+magnification                                                            20x
+fullres_px_width                                                        9830
+fullres_px_height                                                       8602
+tissue                                                                 Heart
+disease_comment                                     6.5 Post Conception Week
+subseries                                                 ST_Sample_6.5PCW_3
+hest_version_added                                                    v1_0_0
+Name: SPA42, dtype: object
+Checking sample NCBI704 for cancer state...
+Sample NCBI704 meta: dataset_title              Spatial localization with Spatial Transcriptom...
+image_filename                                                   NCBI704.tif
+organ                                                                 Kidney
+disease_state                                                       Diseased
+oncotree_code                                                            NaN
+species                                                         Homo sapiens
+patient                                                           Patient 11
+st_technology                                                         Visium
+data_publication_date                                              12-Oct-22
+license                                     Creative Commons Attribution 4.0
+study_link                 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1...
+download_page_link1                                                         
+inter_spot_dist                                                        100.0
+spot_diameter                                                           55.0
+spots_under_tissue                                                       534
+preservation_method                                             Fresh Frozen
+nb_genes                                                               36601
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                              0.352778
+pixel_size_um_estimated                                             0.756856
+magnification                                                            20x
+fullres_px_width                                                       11301
+fullres_px_height                                                      10474
+tissue                                                                Kidney
+disease_comment                                Diabetic Kidney Disease (DKD)
+subseries                                                           31-10221
+hest_version_added                                                    v1_0_0
+Name: NCBI704, dtype: object
+Checking sample SPA133 for cancer state...
+Sample SPA133 meta: dataset_title              Spatial deconvolution of HER2-positive breast ...
+image_filename                                                    SPA133.tif
+organ                                                                 Breast
+disease_state                                                         Cancer
+oncotree_code                                                            IDC
+species                                                         Homo sapiens
+patient                                                            Patient D
+st_technology                                        Spatial Transcriptomics
+data_publication_date                                              16-Sep-21
+license                       Creative Commons Attribution 4.0 International
+study_link                         https://pubmed.ncbi.nlm.nih.gov/34650042/
+download_page_link1                       https://zenodo.org/records/4751624
+inter_spot_dist                                                        200.0
+spot_diameter                                                          100.0
+spots_under_tissue                                                       302
+preservation_method                                             Fresh Frozen
+nb_genes                                                               15503
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                                   NaN
+pixel_size_um_estimated                                             0.683301
+magnification                                                            20x
+fullres_px_width                                                        9307
+fullres_px_height                                                       9881
+tissue                                                                Breast
+disease_comment                                  HER2-positive breast cancer
+subseries                                                                 D4
+hest_version_added                                                    v1_0_0
+Name: SPA133, dtype: object
+Checking sample MISC37 for cancer state...
+Sample MISC37 meta: dataset_title                       COLON MAP: Colon Molecular Atlas Project
+image_filename                                                    MISC37.tif
+organ                                                                  Bowel
+disease_state                                                         Cancer
+oncotree_code                                                           COAD
+species                                                         Homo sapiens
+patient                                                                     
+st_technology                                                         Visium
+data_publication_date                                        December 7 2023
+license                                                      CC BY-NC-ND 4.0
+study_link                 https://www.cell.com/cell/fulltext/S0092-8674(...
+download_page_link1        https://humantumoratlas.org/explore?selectedFi...
+inter_spot_dist                                                        100.0
+spot_diameter                                                           55.0
+spots_under_tissue                                                      3636
+preservation_method                                                     FFPE
+nb_genes                                                               19396
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                                   1.0
+pixel_size_um_estimated                                             0.275609
+magnification                                                            40x
+fullres_px_width                                                       29932
+fullres_px_height                                                      30740
+tissue                                                                 Colon
+disease_comment                                      Not otherwise specified
+subseries                                                          8899_AS_4
+hest_version_added                                                    v1_1_0
+Name: MISC37, dtype: object
+Checking sample NCBI700 for cancer state...
+Sample NCBI700 meta: dataset_title              Spatial localization with Spatial Transcriptom...
+image_filename                                                   NCBI700.tif
+organ                                                                 Kidney
+disease_state                                                       Diseased
+oncotree_code                                                            NaN
+species                                                         Homo sapiens
+patient                                                           Patient 14
+st_technology                                                         Visium
+data_publication_date                                              12-Oct-22
+license                                     Creative Commons Attribution 4.0
+study_link                 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1...
+download_page_link1                                                         
+inter_spot_dist                                                        100.0
+spot_diameter                                                           55.0
+spots_under_tissue                                                       601
+preservation_method                                             Fresh Frozen
+nb_genes                                                               36601
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                              0.352778
+pixel_size_um_estimated                                             0.759012
+magnification                                                            20x
+fullres_px_width                                                       11298
+fullres_px_height                                                      10473
+tissue                                                                Kidney
+disease_comment                                Diabetic Kidney Disease (DKD)
+subseries                                                           31-10042
+hest_version_added                                                    v1_0_0
+Name: NCBI700, dtype: object
+Checking sample SPA148 for cancer state...
+Sample SPA148 meta: dataset_title              Spatial deconvolution of HER2-positive breast ...
+image_filename                                                    SPA148.tif
+organ                                                                 Breast
+disease_state                                                         Cancer
+oncotree_code                                                            IDC
+species                                                         Homo sapiens
+patient                                                            Patient B
+st_technology                                        Spatial Transcriptomics
+data_publication_date                                              16-Sep-21
+license                       Creative Commons Attribution 4.0 International
+study_link                         https://pubmed.ncbi.nlm.nih.gov/34650042/
+download_page_link1                       https://zenodo.org/records/4751624
+inter_spot_dist                                                        200.0
+spot_diameter                                                          100.0
+spots_under_tissue                                                       295
+preservation_method                                             Fresh Frozen
+nb_genes                                                               15109
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                                   NaN
+pixel_size_um_estimated                                             0.693666
+magnification                                                            20x
+fullres_px_width                                                        9260
+fullres_px_height                                                       9912
+tissue                                                                Breast
+disease_comment                                  HER2-positive breast cancer
+subseries                                                                 B1
+hest_version_added                                                    v1_0_0
+Name: SPA148, dtype: object
+Checking sample MEND161 for cancer state...
+Sample MEND161 meta: dataset_title              Spatially resolved clonal copy number alterati...
+image_filename                                                   MEND161.tif
+organ                                                               Prostate
+disease_state                                                         Cancer
+oncotree_code                                                            NaN
+species                                                         Homo sapiens
+patient                                                            patient 1
+st_technology                                                         Visium
+data_publication_date                                              25-Mar-24
+license                                                         CC BY NC 3.0
+study_link                 https://www.nature.com/articles/s41586-022-050...
+download_page_link1          https://data.mendeley.com/datasets/svw96g68dv/5
+inter_spot_dist                                                        100.0
+spot_diameter                                                           55.0
+spots_under_tissue                                                      2775
+preservation_method                                             Fresh Frozen
+nb_genes                                                               33538
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                                   NaN
+pixel_size_um_estimated                                             0.687567
+magnification                                                            20x
+fullres_px_width                                                       13184
+fullres_px_height                                                      13184
+tissue                                                              Prostate
+disease_comment            Gleason 4+3 ISUP grade group 4 , Prostatic Aci...
+subseries                                                     patient_1_H1_2
+hest_version_added                                                    v1_0_0
+Name: MEND161, dtype: object
+Checking sample NCBI539 for cancer state...
+Sample NCBI539 meta: dataset_title              Genome-wide Spatial Expression Profiling in Fo...
+image_filename                                                   NCBI539.tif
+organ                                                                 Kidney
+disease_state                                                        Treated
+oncotree_code                                                            NaN
+species                                                         Homo sapiens
+patient                                                                  NaN
+st_technology                                                         Visium
+data_publication_date                                              15-Oct-21
+license                                                                CC BY
+study_link                         https://pubmed.ncbi.nlm.nih.gov/36776149/
+download_page_link1                                                         
+inter_spot_dist                                                        100.0
+spot_diameter                                                           55.0
+spots_under_tissue                                                       475
+preservation_method                                                      PFA
+nb_genes                                                               33538
+treatment_comment          Human embryonic stem cells were grown on vitro...
+pixel_size_um_embedded                                                   NaN
+pixel_size_um_estimated                                              0.17355
+magnification                                                            40x
+fullres_px_width                                                       48640
+fullres_px_height                                                      47104
+tissue                                                                Kidney
+disease_comment                                                          NaN
+subseries                                        PFA fixed kidney_organoid_2
+hest_version_added                                                    v1_0_0
+Name: NCBI539, dtype: object
+Checking sample MEND64 for cancer state...
+Sample MEND64 meta: dataset_title              Spatially resolved transcriptomic profiling of...
+image_filename                                                    MEND64.tif
+organ                                                                  Brain
+disease_state                                                         Cancer
+oncotree_code                                                            NaN
+species                                                         Homo sapiens
+patient                                                                  NaN
+st_technology                                                         Visium
+data_publication_date                                              20-Dec-22
+license                                                            CC BY 4.0
+study_link                 https://www.nature.com/articles/s41467-023-360...
+download_page_link1          https://data.mendeley.com/datasets/4w6krnywhn/1
+inter_spot_dist                                                        100.0
+spot_diameter                                                           55.0
+spots_under_tissue                                                      1943
+preservation_method                                             Fresh Frozen
+nb_genes                                                               17943
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                                   NaN
+pixel_size_um_estimated                                             0.172043
+magnification                                                            40x
+fullres_px_width                                                       48640
+fullres_px_height                                                      47104
+tissue                                                                 brain
+disease_comment                                        pediatric brain tumor
+subseries                                                      V11Y03-081_C1
+hest_version_added                                                    v1_0_0
+Name: MEND64, dtype: object
+Checking sample NCBI882 for cancer state...
+Sample NCBI882 meta: dataset_title              Image-based spatial transcriptomics identifies...
+image_filename                                                   NCBI882.tif
+organ                                                                   Lung
+disease_state                                                       Diseased
+oncotree_code                                                            NaN
+species                                                         Homo sapiens
+patient                                                            Patient 1
+st_technology                                                         Xenium
+data_publication_date                                              23-Dec-23
+license                                                                  NaN
+study_link                 https://www.biorxiv.org/content/10.1101/2023.1...
+download_page_link1        https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi...
+inter_spot_dist                                                          NaN
+spot_diameter                                                            NaN
+spots_under_tissue                                                      1435
+preservation_method                                                     FFPE
+nb_genes                                                                 541
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                                0.2125
+pixel_size_um_estimated                                               0.2125
+magnification                                                            40x
+fullres_px_width                                                       17141
+fullres_px_height                                                      20708
+tissue                                                                  Lung
+disease_comment                                            ILD More fibrotic
+subseries                                                          TILD117MF
+hest_version_added                                                    v1_1_0
+Name: NCBI882, dtype: object
+Checking sample NCBI538 for cancer state...
+Sample NCBI538 meta: dataset_title              Genome-wide Spatial Expression Profiling in Fo...
+image_filename                                                   NCBI538.tif
+organ                                                                 Kidney
+disease_state                                                        Treated
+oncotree_code                                                            NaN
+species                                                         Homo sapiens
+patient                                                                  NaN
+st_technology                                                         Visium
+data_publication_date                                              15-Oct-21
+license                                                                CC BY
+study_link                         https://pubmed.ncbi.nlm.nih.gov/36776149/
+download_page_link1                                                         
+inter_spot_dist                                                        100.0
+spot_diameter                                                           55.0
+spots_under_tissue                                                       469
+preservation_method                                                      PFA
+nb_genes                                                               33538
+treatment_comment          Human embryonic stem cells were grown on vitro...
+pixel_size_um_embedded                                                   NaN
+pixel_size_um_estimated                                             0.172058
+magnification                                                            40x
+fullres_px_width                                                       48640
+fullres_px_height                                                      47104
+tissue                                                                Kidney
+disease_comment                                                          NaN
+subseries                                        PFA fixed kidney_organoid_3
+hest_version_added                                                    v1_0_0
+Name: NCBI538, dtype: object
+Checking sample MISC21 for cancer state...
+Sample MISC21 meta: dataset_title              A spatially resolved atlas of the human lung c...
+image_filename                                                    MISC21.tif
+organ                                                                   Lung
+disease_state                                                        Treated
+oncotree_code                                                            NaN
+species                                                         Homo sapiens
+patient                                                                     
+st_technology                                                         Visium
+data_publication_date                                              21-Dec-22
+license                    Creative Commons Attribution 4.0 International...
+study_link                 https://www.nature.com/articles/s41588-022-012...
+download_page_link1        https://explore.data.humancellatlas.org/projec...
+inter_spot_dist                                                        100.0
+spot_diameter                                                           55.0
+spots_under_tissue                                                      2987
+preservation_method                                             Fresh Frozen
+nb_genes                                                               33538
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                                   NaN
+pixel_size_um_estimated                                             0.455927
+magnification                                                            40x
+fullres_px_width                                                       32832
+fullres_px_height                                                      18432
+tissue                                                            Parenchyma
+disease_comment                                                          NaN
+subseries                                                   WSA_LngSP9258469
+hest_version_added                                                    v1_0_0
+Name: MISC21, dtype: object
+Checking sample NCBI826 for cancer state...
+Sample NCBI826 meta: dataset_title              Multimodal decoding of human liver regeneratio...
+image_filename                                                   NCBI826.tif
+organ                                                                  Liver
+disease_state                                                       Diseased
+oncotree_code                                                            NaN
+species                                                         Homo sapiens
+patient                                                                  NaN
+st_technology                                                         Visium
+data_publication_date                                               1-Feb-23
+license                       Creative Commons Attribution 4.0 International
+study_link                 https://www.nature.com/articles/s41586-024-073...
+download_page_link1                                                         
+inter_spot_dist                                                        100.0
+spot_diameter                                                           55.0
+spots_under_tissue                                                      4992
+preservation_method                                             Fresh Frozen
+nb_genes                                                               33538
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                              0.968747
+pixel_size_um_estimated                                             0.968677
+magnification                                                            20x
+fullres_px_width                                                        8088
+fullres_px_height                                                       8100
+tissue                                                   NonAE liver explant
+disease_comment                           non-A‚ÄìE hepatitis hepatitis ALF 
+subseries                                             NonAE_liver_spatial_05
+hest_version_added                                                    v1_0_0
+Name: NCBI826, dtype: object
+Checking sample SPA151 for cancer state...
+Sample SPA151 meta: dataset_title              Spatial deconvolution of HER2-positive breast ...
+image_filename                                                    SPA151.tif
+organ                                                                 Breast
+disease_state                                                         Cancer
+oncotree_code                                                            IDC
+species                                                         Homo sapiens
+patient                                                            Patient A
+st_technology                                        Spatial Transcriptomics
+data_publication_date                                              16-Sep-21
+license                       Creative Commons Attribution 4.0 International
+study_link                         https://pubmed.ncbi.nlm.nih.gov/34650042/
+download_page_link1                       https://zenodo.org/records/4751624
+inter_spot_dist                                                        200.0
+spot_diameter                                                          100.0
+spots_under_tissue                                                       343
+preservation_method                                             Fresh Frozen
+nb_genes                                                               15583
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                                   NaN
+pixel_size_um_estimated                                             0.920607
+magnification                                                            20x
+fullres_px_width                                                        6975
+fullres_px_height                                                       7424
+tissue                                                                Breast
+disease_comment                                  HER2-positive breast cancer
+subseries                                                                 A4
+hest_version_added                                                    v1_0_0
+Name: SPA151, dtype: object
+Checking sample SPA70 for cancer state...
+Sample SPA70 meta: dataset_title              Integrating spatial gene expression and breast...
+image_filename                                                     SPA70.tif
+organ                                                                 Breast
+disease_state                                                         Cancer
+oncotree_code                                                            IDC
+species                                                         Homo sapiens
+patient                                                              BC23506
+st_technology                                        Spatial Transcriptomics
+data_publication_date                                              30-Nov-21
+license                                                            CC BY 4.0
+study_link                 https://www.science.org/doi/10.1126/science.aa...
+download_page_link1          https://data.mendeley.com/datasets/29ntw7sh4r/5
+inter_spot_dist                                                        200.0
+spot_diameter                                                          100.0
+spots_under_tissue                                                       502
+preservation_method                                                      NaN
+nb_genes                                                               19088
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                                   NaN
+pixel_size_um_estimated                                             0.703372
+magnification                                                            20x
+fullres_px_width                                                        9309
+fullres_px_height                                                       9907
+tissue                                                                Breast
+disease_comment                                                    Luminal_B
+subseries                                                         BC23506_C2
+hest_version_added                                                    v1_0_0
+Name: SPA70, dtype: object
+Checking sample INT16 for cancer state...
+Sample INT16 meta: dataset_title              Tertiary lymphoid structures generate and prop...
+image_filename                                                     INT16.tif
+organ                                                                 Kidney
+disease_state                                                         Cancer
+oncotree_code                                                         SCCRCC
+species                                                         Homo sapiens
+patient                                                            Patient 9
+st_technology                                                         Visium
+data_publication_date                                                 3/3/22
+license                                                             Internal
+study_link                         https://pubmed.ncbi.nlm.nih.gov/35231421/
+download_page_link1                                          None (internal)
+inter_spot_dist                                                        100.0
+spot_diameter                                                           55.0
+spots_under_tissue                                                      3206
+preservation_method                                                      NaN
+nb_genes                                                               17943
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                              0.457666
+pixel_size_um_estimated                                             0.457638
+magnification                                                            40x
+fullres_px_width                                                       17158
+fullres_px_height                                                      16884
+tissue                                                                Kidney
+disease_comment                                                          NaN
+subseries                                              ccRCC tumor ffpe_c_36
+hest_version_added                                                    v1_0_0
+Name: INT16, dtype: object
+Checking sample NCBI507 for cancer state...
+Sample NCBI507 meta: dataset_title              Spatial transcriptomics landscape of non-commu...
+image_filename                                                   NCBI507.tif
+organ                                                                   Skin
+disease_state                                                       Diseased
+oncotree_code                                                            NaN
+species                                                         Homo sapiens
+patient                                                                  NaN
+st_technology                                                         Visium
+data_publication_date                                              14-Nov-22
+license                                                            CC BY 4.0
+study_link                 https://www.nature.com/articles/s41467-022-353...
+download_page_link1                                                         
+inter_spot_dist                                                        100.0
+spot_diameter                                                           55.0
+spots_under_tissue                                                       469
+preservation_method                                             Fresh Frozen
+nb_genes                                                               20613
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                                   NaN
+pixel_size_um_estimated                                             0.526093
+magnification                                                            20x
+fullres_px_width                                                       15983
+fullres_px_height                                                      16200
+tissue                                                                  Skin
+disease_comment                                   atopic dermatitis lesional
+subseries                  Patient 5 lesional atopic dermatitis, rep 2 [P...
+hest_version_added                                                    v1_0_0
+Name: NCBI507, dtype: object
+Checking sample TENX24 for cancer state...
+Sample TENX24 meta: dataset_title              Human Breast Cancer: Whole Transcriptome Analysis
+image_filename                                                    TENX24.tif
+organ                                                                 Breast
+disease_state                                                         Cancer
+oncotree_code                                                            ILC
+species                                                         Homo sapiens
+patient                                                                  NaN
+st_technology                                                         Visium
+data_publication_date                                               10/27/20
+license                                         Creative Commons Attribution
+study_link                                                               NaN
+download_page_link1        https://www.10xgenomics.com/datasets/human-bre...
+inter_spot_dist                                                        100.0
+spot_diameter                                                           55.0
+spots_under_tissue                                                      4325
+preservation_method                                             Fresh Frozen
+nb_genes                                                               32285
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                                   NaN
+pixel_size_um_estimated                                             0.366199
+magnification                                                            40x
+fullres_px_width                                                       24240
+fullres_px_height                                                      24240
+tissue                                                                Breast
+disease_comment            Invasive Lobular Carcinoma, AJCC/UICC Stage Gr...
+subseries                                                                NaN
+hest_version_added                                                    v1_0_0
+Name: TENX24, dtype: object
+Checking sample NCBI487 for cancer state...
+Sample NCBI487 meta: dataset_title              Spatial transcriptomics landscape of non-commu...
+image_filename                                                   NCBI487.tif
+organ                                                                   Skin
+disease_state                                                       Diseased
+oncotree_code                                                            NaN
+species                                                         Homo sapiens
+patient                                                                  NaN
+st_technology                                                         Visium
+data_publication_date                                              14-Nov-22
+license                                                            CC BY 4.0
+study_link                 https://www.nature.com/articles/s41467-022-353...
+download_page_link1                                                         
+inter_spot_dist                                                        100.0
+spot_diameter                                                           55.0
+spots_under_tissue                                                      1014
+preservation_method                                             Fresh Frozen
+nb_genes                                                               20613
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                                   NaN
+pixel_size_um_estimated                                             0.526061
+magnification                                                            20x
+fullres_px_width                                                       15983
+fullres_px_height                                                      16201
+tissue                                                                  Skin
+disease_comment                                           psoriasis lesional
+subseries                  Patient 10 lesional psoriasis, rep 2 [P16357_1...
+hest_version_added                                                    v1_0_0
+Name: NCBI487, dtype: object
+Checking sample MISC44 for cancer state...
+Sample MISC44 meta: dataset_title                       COLON MAP: Colon Molecular Atlas Project
+image_filename                                                    MISC44.tif
+organ                                                                  Bowel
+disease_state                                                         Cancer
+oncotree_code                                                           COAD
+species                                                         Homo sapiens
+patient                                                                     
+st_technology                                                         Visium
+data_publication_date                                        December 7 2023
+license                                                      CC BY-NC-ND 4.0
+study_link                 https://www.cell.com/cell/fulltext/S0092-8674(...
+download_page_link1        https://humantumoratlas.org/explore?selectedFi...
+inter_spot_dist                                                        100.0
+spot_diameter                                                           55.0
+spots_under_tissue                                                       932
+preservation_method                                                     FFPE
+nb_genes                                                               18518
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                                   1.0
+pixel_size_um_estimated                                             0.276024
+magnification                                                            40x
+fullres_px_width                                                       29037
+fullres_px_height                                                      29650
+tissue                                                                 Colon
+disease_comment                                      Not otherwise specified
+subseries                                                          8578_AS_1
+hest_version_added                                                    v1_1_0
+Name: MISC44, dtype: object
+Checking sample TENX124 for cancer state...
+Sample TENX124 meta: dataset_title              Human Tonsil Data with Xenium Human Multi-Tiss...
+image_filename                                                   TENX124.tif
+organ                                                               Lymphoid
+disease_state                                                       Diseased
+oncotree_code                                                            NaN
+species                                                         Homo sapiens
+patient                                                            patient 2
+st_technology                                                         Xenium
+data_publication_date                                                 3/5/24
+license                                         Creative Commons Attribution
+study_link                                                               NaN
+download_page_link1        https://www.10xgenomics.com/datasets/human-ton...
+inter_spot_dist                                                          NaN
+spot_diameter                                                            NaN
+spots_under_tissue                                                     12707
+preservation_method                                                     FFPE
+nb_genes                                                                 541
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                              0.273776
+pixel_size_um_estimated                                             0.273687
+magnification                                                            40x
+fullres_px_width                                                       47351
+fullres_px_height                                                      33969
+tissue                                                                Tonsil
+disease_comment                              Follicular lymphoid hyperplasia
+subseries                                    Follicular lymphoid hyperplasia
+hest_version_added                                                    v1_0_0
+Name: TENX124, dtype: object
+Checking sample MISC63 for cancer state...
+Sample MISC63 meta: dataset_title                       COLON MAP: Colon Molecular Atlas Project
+image_filename                                                    MISC63.tif
+organ                                                                  Bowel
+disease_state                                                         Cancer
+oncotree_code                                                           COAD
+species                                                         Homo sapiens
+patient                                                                     
+st_technology                                                         Visium
+data_publication_date                                        December 7 2023
+license                                                      CC BY-NC-ND 4.0
+study_link                 https://www.cell.com/cell/fulltext/S0092-8674(...
+download_page_link1        https://humantumoratlas.org/explore?selectedFi...
+inter_spot_dist                                                        100.0
+spot_diameter                                                           55.0
+spots_under_tissue                                                      3467
+preservation_method                                                     FFPE
+nb_genes                                                               19346
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                                   1.0
+pixel_size_um_estimated                                             0.275885
+magnification                                                            40x
+fullres_px_width                                                       37827
+fullres_px_height                                                      34035
+tissue                                                                 Colon
+disease_comment                                                      Primary
+subseries                                                          7003_AS_7
+hest_version_added                                                    v1_1_0
+Name: MISC63, dtype: object
+Checking sample NCBI705 for cancer state...
+Sample NCBI705 meta: dataset_title              Spatial localization with Spatial Transcriptom...
+image_filename                                                   NCBI705.tif
+organ                                                                 Kidney
+disease_state                                                       Diseased
+oncotree_code                                                            NaN
+species                                                         Homo sapiens
+patient                                                           Patient 10
+st_technology                                                         Visium
+data_publication_date                                              12-Oct-22
+license                                     Creative Commons Attribution 4.0
+study_link                 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1...
+download_page_link1                                                         
+inter_spot_dist                                                        100.0
+spot_diameter                                                           55.0
+spots_under_tissue                                                       560
+preservation_method                                             Fresh Frozen
+nb_genes                                                               36601
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                              0.352778
+pixel_size_um_estimated                                             0.758192
+magnification                                                            20x
+fullres_px_width                                                       11289
+fullres_px_height                                                      10473
+tissue                                                                Kidney
+disease_comment                                Diabetic Kidney Disease (DKD)
+subseries                                                           29-10280
+hest_version_added                                                    v1_0_0
+Name: NCBI705, dtype: object
+Checking sample NCBI884 for cancer state...
+Sample NCBI884 meta: dataset_title              Image-based spatial transcriptomics identifies...
+image_filename                                                   NCBI884.tif
+organ                                                                   Lung
+disease_state                                                        Healthy
+oncotree_code                                                            NaN
+species                                                         Homo sapiens
+patient                                                           Patient 27
+st_technology                                                         Xenium
+data_publication_date                                              23-Dec-23
+license                                                                  NaN
+study_link                 https://www.biorxiv.org/content/10.1101/2023.1...
+download_page_link1        https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi...
+inter_spot_dist                                                          NaN
+spot_diameter                                                            NaN
+spots_under_tissue                                                      2504
+preservation_method                                                     FFPE
+nb_genes                                                                 541
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                                0.2125
+pixel_size_um_estimated                                               0.2125
+magnification                                                            40x
+fullres_px_width                                                       25630
+fullres_px_height                                                      28964
+tissue                                                                  Lung
+disease_comment                                                      Control
+subseries                                                            THD0008
+hest_version_added                                                    v1_1_0
+Name: NCBI884, dtype: object
+Checking sample MISC26 for cancer state...
+Sample MISC26 meta: dataset_title              A spatially resolved atlas of the human lung c...
+image_filename                                                    MISC26.tif
+organ                                                                   Lung
+disease_state                                                        Treated
+oncotree_code                                                            NaN
+species                                                         Homo sapiens
+patient                                                                     
+st_technology                                                         Visium
+data_publication_date                                              21-Dec-22
+license                    Creative Commons Attribution 4.0 International...
+study_link                 https://www.nature.com/articles/s41588-022-012...
+download_page_link1        https://explore.data.humancellatlas.org/projec...
+inter_spot_dist                                                        100.0
+spot_diameter                                                           55.0
+spots_under_tissue                                                      2524
+preservation_method                                             Fresh Frozen
+nb_genes                                                               33538
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                                   NaN
+pixel_size_um_estimated                                             0.456158
+magnification                                                            40x
+fullres_px_width                                                       32832
+fullres_px_height                                                      18432
+tissue                                                               Bronchi
+disease_comment                                                          NaN
+subseries                                                   WSA_LngSP9258464
+hest_version_added                                                    v1_0_0
+Name: MISC26, dtype: object
+Checking sample NCBI875 for cancer state...
+Sample NCBI875 meta: dataset_title              Image-based spatial transcriptomics identifies...
+image_filename                                                   NCBI875.tif
+organ                                                                   Lung
+disease_state                                                        Healthy
+oncotree_code                                                            NaN
+species                                                         Homo sapiens
+patient                                                            Patient 7
+st_technology                                                         Xenium
+data_publication_date                                              23-Dec-23
+license                                                                  NaN
+study_link                 https://www.biorxiv.org/content/10.1101/2023.1...
+download_page_link1        https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi...
+inter_spot_dist                                                          NaN
+spot_diameter                                                            NaN
+spots_under_tissue                                                       999
+preservation_method                                                     FFPE
+nb_genes                                                                 541
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                                0.2125
+pixel_size_um_estimated                                               0.2125
+magnification                                                            40x
+fullres_px_width                                                       17132
+fullres_px_height                                                      12491
+tissue                                                                  Lung
+disease_comment                                                      Control
+subseries                                                           VUHD116B
+hest_version_added                                                    v1_1_0
+Name: NCBI875, dtype: object
+Checking sample TENX119 for cancer state...
+Sample TENX119 meta: dataset_title              Human Heart Data with Xenium Human Multi-Tissu...
+image_filename                                                   TENX119.tif
+organ                                                                  Heart
+disease_state                                                        Healthy
+oncotree_code                                                            NaN
+species                                                         Homo sapiens
+patient                                                                  NaN
+st_technology                                                         Xenium
+data_publication_date                                                 3/5/24
+license                                         Creative Commons Attribution
+study_link                                                               NaN
+download_page_link1        https://www.10xgenomics.com/datasets/human-hea...
+inter_spot_dist                                                          NaN
+spot_diameter                                                            NaN
+spots_under_tissue                                                      2263
+preservation_method                                                     FFPE
+nb_genes                                                                 541
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                                0.2125
+pixel_size_um_estimated                                             0.273703
+magnification                                                            40x
+fullres_px_width                                                       24544
+fullres_px_height                                                      10645
+tissue                                                                 Heart
+disease_comment                                                          NaN
+subseries                                                                NaN
+hest_version_added                                                    v1_0_0
+Name: TENX119, dtype: object
+Checking sample SPA154 for cancer state...
+Sample SPA154 meta: dataset_title              Spatial deconvolution of HER2-positive breast ...
+image_filename                                                    SPA154.tif
+organ                                                                 Breast
+disease_state                                                         Cancer
+oncotree_code                                                            IDC
+species                                                         Homo sapiens
+patient                                                            Patient A
+st_technology                                        Spatial Transcriptomics
+data_publication_date                                              16-Sep-21
+license                       Creative Commons Attribution 4.0 International
+study_link                         https://pubmed.ncbi.nlm.nih.gov/34650042/
+download_page_link1                       https://zenodo.org/records/4751624
+inter_spot_dist                                                        200.0
+spot_diameter                                                          100.0
+spots_under_tissue                                                       346
+preservation_method                                             Fresh Frozen
+nb_genes                                                               15045
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                                   NaN
+pixel_size_um_estimated                                             0.920607
+magnification                                                            20x
+fullres_px_width                                                        6954
+fullres_px_height                                                       7435
+tissue                                                                Breast
+disease_comment                                  HER2-positive breast cancer
+subseries                                                                 A1
+hest_version_added                                                    v1_0_0
+Name: SPA154, dtype: object
+Checking sample NCBI769 for cancer state...
+Sample NCBI769 meta: dataset_title              Single Cell and Spatial Analysis of Human Squa...
+image_filename                                                   NCBI769.tif
+organ                                                                   Skin
+disease_state                                                         Cancer
+oncotree_code                                                           CSCC
+species                                                         Homo sapiens
+patient                                                            Patient 2
+st_technology                                        Spatial Transcriptomics
+data_publication_date                                              22-Jun-20
+license                                                                  NaN
+study_link                 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7...
+download_page_link1                                                         
+inter_spot_dist                                                        110.0
+spot_diameter                                                          150.0
+spots_under_tissue                                                       646
+preservation_method                                                     FFPE
+nb_genes                                                               17344
+treatment_comment                                                        NaN
+pixel_size_um_embedded                                                   NaN
+pixel_size_um_estimated                                             0.549725
+magnification                                                            20x
+fullres_px_width                                                       15872
+fullres_px_height                                                      15872
+tissue                                                                  Skin
+disease_comment                                                          NaN
+subseries                                                         P2_ST_rep2
+hest_version_added                                                    v1_0_0
+Name: NCBI769, dtype: object
+Found 0 samples.
+✓ Dataset created with 0 samples
+✓ Got 0 sample IDs from dataset
+Setting up trainer...
+✓ Trainer created
+Running predictions...
+Traceback (most recent call last):
+  File "/work/bose_lab/Jamie/Summer/models/THItoGene-Fork/inference.py", line 95, in <module>
+    test_model()
+  File "/work/bose_lab/Jamie/Summer/models/THItoGene-Fork/inference.py", line 58, in test_model
+    print(f"✓ Predictions completed, got {len(predictions)} batches")
+TypeError: object of type 'NoneType' has no len()

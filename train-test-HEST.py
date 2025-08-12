@@ -75,20 +75,25 @@ def train(test_sample_ID=0, vit_dataset=ViT_HEST1K, epochs=300, modelsave_addres
     mylogger = CSVLogger(save_dir=modelsave_address + "/../logs/",
                          name="my_test_log_" + tagname + '_' + str(test_sample_ID))
     
+    
+    devices = torch.cuda.device_count() if torch.cuda.is_available() else 0
     memory_monitor = MemoryMonitorCallback()
     batch_memory_cleanup = ClearCacheCallback()
     epoch_timer = EpochTimerCallback()
+    oom_handler = OOMHandlerCallback()
 
     # Setup trainer with configurable GPU settings
     trainer_kwargs = {
         'max_epochs': epochs,
+        'devices': devices,
         'logger': mylogger,
-        'callbacks': [checkpoint_callback, early_stopping, memory_monitor, batch_memory_cleanup, epoch_timer],
+        'strategy': strategy,
+        'callbacks': [checkpoint_callback, early_stopping, memory_monitor, oom_handler, batch_memory_cleanup, epoch_timer],
         'enable_progress_bar': False,
-        'check_val_every_n_epoch': 1,
-        'log_every_n_steps': 10,
+        'check_val_every_n_epoch': 5,
+        'log_every_n_steps': 20,
         'accumulate_grad_batches': acc_grad_batches,
-        'gradient_clip_val': 1.0,
+        'gradient_clip_val': 0.5,
         'precision': 16,
     }
     
@@ -247,6 +252,34 @@ class EpochTimerCallback(Callback):
             print(f"[EpochTimer] Epoch {trainer.current_epoch} completed in {minutes}m {seconds:.1f}s")
             self.epoch_start_time = None
 
+class OOMHandlerCallback(pl.Callback):
+    """Handle out-of-memory errors during training"""
+    
+    def __init__(self):
+        self.oom_count = 0
+    
+    def on_train_batch_start(self, trainer, pl_module, batch, batch_idx):
+        # This won't catch OOM during forward pass, but can help with cleanup
+        pass
+    
+    def on_exception(self, trainer, pl_module, exception):
+        if isinstance(exception, RuntimeError) and "out of memory" in str(exception):
+            self.oom_count += 1
+            print(f"OOM Error #{self.oom_count} detected: {exception}")
+            
+            # Clear cache
+            if torch.cuda.is_available():
+                torch.cuda.empty_cache()
+                torch.cuda.synchronize()
+            gc.collect()
+            
+            print("Cleared CUDA cache after OOM")
+            
+            # Log memory state
+            if torch.cuda.is_available():
+                allocated = torch.cuda.memory_allocated() / 1024**3
+                reserved = torch.cuda.memory_reserved() / 1024**3
+                print(f"Post-OOM Memory - Allocated: {allocated:.2f} GB, Reserved: {reserved:.2f} GB")
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Train and test THItoGene model with configurable parameters')

@@ -1,8 +1,8 @@
 import anndata as ad
 import os
 
-path = "../../data/HERST_preprocess/Hallmark_genes/train"
-file = "ZEN45_preprocessed.h5ad"
+path = "../../data/HERST_preprocess/3CA_genes/train"
+file = "MEND145_preprocessed.h5ad"
 adata = ad.read_h5ad(os.path.join(path, file))
 print(adata.n_obs, adata.n_vars)
 # print(adata)

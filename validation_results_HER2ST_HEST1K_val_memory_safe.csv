@@ -1,0 +1,33 @@
+filename,model_number,checkpoint_path,success,device_used,error,mean_correlation,median_correlation,std_correlation,percentile_25,percentile_75,num_valid_genes,num_total_genes,eval_mode,gene_list,rank
+THItoGene_her2st_0.ckpt,0,./model/THItoGene_her2st_0.ckpt,False,no_successful_samples,No samples processed successfully. 123 samples failed.,,,,,,0,0,val,HER2ST,1
+THItoGene_her2st_1.ckpt,1,./model/THItoGene_her2st_1.ckpt,False,no_successful_samples,No samples processed successfully. 123 samples failed.,,,,,,0,0,val,HER2ST,2
+THItoGene_her2st_10.ckpt,10,./model/THItoGene_her2st_10.ckpt,False,no_successful_samples,No samples processed successfully. 123 samples failed.,,,,,,0,0,val,HER2ST,3
+THItoGene_her2st_11.ckpt,11,./model/THItoGene_her2st_11.ckpt,False,no_successful_samples,No samples processed successfully. 123 samples failed.,,,,,,0,0,val,HER2ST,4
+THItoGene_her2st_12.ckpt,12,./model/THItoGene_her2st_12.ckpt,False,no_successful_samples,No samples processed successfully. 123 samples failed.,,,,,,0,0,val,HER2ST,5
+THItoGene_her2st_13.ckpt,13,./model/THItoGene_her2st_13.ckpt,False,no_successful_samples,No samples processed successfully. 123 samples failed.,,,,,,0,0,val,HER2ST,6
+THItoGene_her2st_14.ckpt,14,./model/THItoGene_her2st_14.ckpt,False,no_successful_samples,No samples processed successfully. 123 samples failed.,,,,,,0,0,val,HER2ST,7
+THItoGene_her2st_15.ckpt,15,./model/THItoGene_her2st_15.ckpt,False,no_successful_samples,No samples processed successfully. 123 samples failed.,,,,,,0,0,val,HER2ST,8
+THItoGene_her2st_16.ckpt,16,./model/THItoGene_her2st_16.ckpt,False,no_successful_samples,No samples processed successfully. 123 samples failed.,,,,,,0,0,val,HER2ST,9
+THItoGene_her2st_17.ckpt,17,./model/THItoGene_her2st_17.ckpt,False,no_successful_samples,No samples processed successfully. 123 samples failed.,,,,,,0,0,val,HER2ST,10
+THItoGene_her2st_18.ckpt,18,./model/THItoGene_her2st_18.ckpt,False,no_successful_samples,No samples processed successfully. 123 samples failed.,,,,,,0,0,val,HER2ST,11
+THItoGene_her2st_19.ckpt,19,./model/THItoGene_her2st_19.ckpt,False,no_successful_samples,No samples processed successfully. 123 samples failed.,,,,,,0,0,val,HER2ST,12
+THItoGene_her2st_2.ckpt,2,./model/THItoGene_her2st_2.ckpt,False,no_successful_samples,No samples processed successfully. 123 samples failed.,,,,,,0,0,val,HER2ST,13
+THItoGene_her2st_20.ckpt,20,./model/THItoGene_her2st_20.ckpt,False,no_successful_samples,No samples processed successfully. 123 samples failed.,,,,,,0,0,val,HER2ST,14
+THItoGene_her2st_21.ckpt,21,./model/THItoGene_her2st_21.ckpt,False,no_successful_samples,No samples processed successfully. 123 samples failed.,,,,,,0,0,val,HER2ST,15
+THItoGene_her2st_22.ckpt,22,./model/THItoGene_her2st_22.ckpt,False,no_successful_samples,No samples processed successfully. 123 samples failed.,,,,,,0,0,val,HER2ST,16
+THItoGene_her2st_23.ckpt,23,./model/THItoGene_her2st_23.ckpt,False,no_successful_samples,No samples processed successfully. 123 samples failed.,,,,,,0,0,val,HER2ST,17
+THItoGene_her2st_24.ckpt,24,./model/THItoGene_her2st_24.ckpt,False,no_successful_samples,No samples processed successfully. 123 samples failed.,,,,,,0,0,val,HER2ST,18
+THItoGene_her2st_25.ckpt,25,./model/THItoGene_her2st_25.ckpt,False,no_successful_samples,No samples processed successfully. 123 samples failed.,,,,,,0,0,val,HER2ST,19
+THItoGene_her2st_26.ckpt,26,./model/THItoGene_her2st_26.ckpt,False,model_loading_failed,PytorchStreamReader failed reading zip archive: failed finding central directory,,,,,,0,0,val,HER2ST,20
+THItoGene_her2st_27.ckpt,27,./model/THItoGene_her2st_27.ckpt,False,no_successful_samples,No samples processed successfully. 123 samples failed.,,,,,,0,0,val,HER2ST,21
+THItoGene_her2st_28.ckpt,28,./model/THItoGene_her2st_28.ckpt,False,no_successful_samples,No samples processed successfully. 123 samples failed.,,,,,,0,0,val,HER2ST,22
+THItoGene_her2st_29.ckpt,29,./model/THItoGene_her2st_29.ckpt,False,no_successful_samples,No samples processed successfully. 123 samples failed.,,,,,,0,0,val,HER2ST,23
+THItoGene_her2st_3.ckpt,3,./model/THItoGene_her2st_3.ckpt,False,no_successful_samples,No samples processed successfully. 123 samples failed.,,,,,,0,0,val,HER2ST,24
+THItoGene_her2st_30.ckpt,30,./model/THItoGene_her2st_30.ckpt,False,no_successful_samples,No samples processed successfully. 123 samples failed.,,,,,,0,0,val,HER2ST,25
+THItoGene_her2st_31.ckpt,31,./model/THItoGene_her2st_31.ckpt,False,no_successful_samples,No samples processed successfully. 123 samples failed.,,,,,,0,0,val,HER2ST,26
+THItoGene_her2st_4.ckpt,4,./model/THItoGene_her2st_4.ckpt,False,no_successful_samples,No samples processed successfully. 123 samples failed.,,,,,,0,0,val,HER2ST,27
+THItoGene_her2st_5.ckpt,5,./model/THItoGene_her2st_5.ckpt,False,no_successful_samples,No samples processed successfully. 123 samples failed.,,,,,,0,0,val,HER2ST,28
+THItoGene_her2st_6.ckpt,6,./model/THItoGene_her2st_6.ckpt,False,no_successful_samples,No samples processed successfully. 123 samples failed.,,,,,,0,0,val,HER2ST,29
+THItoGene_her2st_7.ckpt,7,./model/THItoGene_her2st_7.ckpt,False,no_successful_samples,No samples processed successfully. 123 samples failed.,,,,,,0,0,val,HER2ST,30
+THItoGene_her2st_8.ckpt,8,./model/THItoGene_her2st_8.ckpt,False,no_successful_samples,No samples processed successfully. 123 samples failed.,,,,,,0,0,val,HER2ST,31
+THItoGene_her2st_9.ckpt,9,./model/THItoGene_her2st_9.ckpt,False,no_successful_samples,No samples processed successfully. 123 samples failed.,,,,,,0,0,val,HER2ST,32

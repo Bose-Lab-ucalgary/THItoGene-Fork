@@ -234,7 +234,7 @@ class ViT_HER2ST(torch.utils.data.Dataset):
         return list(gene_set)
 
 class ViT_HEST1K(torch.utils.data.Dataset):
-    def __init__(self, mode='train', gene_list = '3CA', sr=False, neighs=4):
+    def __init__(self, mode='train', gene_list = '3CA', sr=False, neighs=4, cancer_only=False):
         super().__init__()
         
         self.hest_path = Path("/work/bose_lab/tahsin/data/HEST")
@@ -264,11 +264,24 @@ class ViT_HEST1K(torch.utils.data.Dataset):
             self.processed_path = self.processed_path / 'test'
         
         print(f"Looking for HEST1K data in: {self.processed_path}")
+        
+        meta_path = "../../../../tahsin/data/HEST/HEST_v1_1_0.csv"
+        self.metadf = pd.read_csv(meta_path)
+        
 
         # Get sample IDs from available files
         if self.processed_path.exists():
             sample_files = list(self.processed_path.glob("*.h5ad"))
             self.sample_ids = [file.stem.split('_')[0] for file in sample_files]
+            if cancer_only:
+                meta = self.metadf.copy().set_index('id')
+                # self.sample_ids = [s for s in self.sample_ids if meta.loc[s, 'disease_state'] == 'cancer']
+                for s in self.sample_ids.copy():
+                    # print(f"Checking sample {s} for cancer state...")
+                    # print(f"Sample {s} meta: {meta.loc[s]}")
+                    if meta.loc[s, 'disease_state'].lower() != 'cancer':
+                        self.sample_ids.remove(s)
+                
             print(f"Found {len(self.sample_ids)} samples.")
         else:
             print(f"Warning: Path {self.processed_path} does not exist.")
